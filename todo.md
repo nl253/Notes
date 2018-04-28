@@ -6,48 +6,48 @@
     -   laptop case
 -   talk to grandparents
     -   probably write a letter + thank for the money
--   email Simon again (he forgot about the project)
+-   wait for Simon's reply
+-   `Writer`, `Reader` and `State` monads
+-   possible uses of `MonadPlus` and `Alternative`
 
 ## Revision
 
 ### Algorithms, Correctness and Efficiency
 
+-   ~~stack frames~~
+
 #### Big O notation
 
 -   differences between types of asymptotic notations
 -   ~~**estimation of runtime complexity - see the lecture on Moodle**~~
--   ~~**manipulation of O notation**~~
+-   ~~**algebraic manipulation of O notation**~~
 
 #### Graph Theory
 
--   Travelling Salesman Problem
+-   Definitions
+    -   trail
+    -   walk
+    -   Travelling Salesman Problem
+    -   path
+    -   strongly connected component
+    -   Eulerian graph
+    -   simple graph
+    -   ~~tree~~
+    -   ~~graph~~
+    -   ~~planar graph~~
+-   Algorithms
+    -   Dijkstra's
+    -   ~~breadth-first search~~
+    -   ~~depth-first search~~
+    -   ~~**Floyd-Warshall's**~~
 -   **encoding**
-    -   matrix
     -   object
-    -   adjacency list
     -   set
+    -   ~~matrix~~
+    -   ~~adjacency list~~
 -   ~~Minimum Spanning Tree algorithms~~
     -   ~~**Kruskal's**~~
     -   ~~Prim's~~
-
-##### Definitions
-
--   trail
--   walk
--   path
--   strongly connected component
--   eulerian graph
--   simple graph
--   ~~tree~~
--   ~~graph~~
--   ~~planar graph~~
-
-##### Algorithms
-
--   Dijkstra's
--   ~~breadth-first search~~
--   ~~depth-first search~~
--   ~~**Floyd-Warshall's**~~
 
 ##### Search Algorithms
 
@@ -69,8 +69,8 @@
 
 #### Sorting Algorithms
 
--   **insertion sort**
--   bubble sort
+-   ~~**insertion sort**~~
+-   ~~bubble sort~~
 -   ~~**merge sort**~~
 -   ~~**quicksort**~~
 
@@ -80,6 +80,20 @@
 -   complexity hierarchies
 
 ### Database Systems
+
+#### Relational Model
+
+-   concepts and definitions
+    -   constraints
+    -   ~~attribute~~
+    -   ~~entity integrity~~
+    -   ~~referential integrity~~
+    -   ~~relation~~
+    -   ~~NULL~~
+    -   ~~domain~~
+    -   ~~primary, composite, candidate, foreign keys~~
+    -   ~~relational vs sql vocabulary~~
+    -   ~~tuple~~
 
 #### Modelling
 
@@ -105,41 +119,54 @@
 -   rename
 -   projection
 -   joins
-    -   natural join
     -   equijoin
     -   semijoin
+    -   ~~natural join~~
 -   ~~vocabulary (eg relation vs table, tuple vs row)~~
 
 #### SQL
 
 -   ~~casting~~
+-   nested queries
+-   aggregate queries
+    -   ~~`GROUP BY`~~
+    -   ~~`HAVING`~~
 -   creating a table
     -   adding constraints
-    -   foreign key
-    -   ~~(composite) primary key~~
+        -   ~~foreign key~~
+        -   ~~(composite) primary key~~
+
+#### Normalisation
 
 #### ACID
 
--   atomicity
--   consistency
--   isolation
--   durability
+-   ~~atomicity~~
+-   ~~consistency~~
+-   ~~isolation~~
+-   ~~durability~~
 
 #### Concurrency
 
--   timestamps
--   locking
--   dirty read
--   dirty write
--   transactions
--   ~~deadlock~~
+-   pessimistic approaches
+    -   timestamps (advantages and disadvantages)
+    -   locking (advantages and disadvantages)
+-   optimistic approaches
+-   what is and how to deal with:
+    -   dirty read
+    -   dirty write
+    -   livelock
+    -   ~~deadlock~~
+-   ~~transactions~~
+-   ~~concepts~~
+    -   ~~serial schedule (advantages and disadvantages)~~
+    -   ~~serialisable~~
 
 #### Performance on the physical level
 
 -   indexing
 -   hashing
 -   storage
--   b-trees
+-   B+-Trees
 -   file structure
     -   heap
     -   sequential
@@ -152,8 +179,8 @@
 
 #### Automata and Regular Expressions
 
--   **translate NFA to DFA**
--   **the pumping lemma for regular languages**
+-   ~~**translate NFA to DFA**~~
+-   ~~**the pumping lemma for regular languages**~~
 -   ~~regex~~
 -   ~~translate regex to automata~~
 -   ~~translate automata to regex~~
@@ -166,7 +193,7 @@
     -   concatenation
     -   substitution
         -   intersection with a regular language
-    -   kleene star
+    -   Kleene star
 -   the pumping lemma for context-free languages
 -   CYK parsing algorithm
 -   ~~recursive descent parser~~
@@ -178,60 +205,76 @@
 
 #### Turing Machines
 
--   configurations
+-   ~~configurations~~
 
 #### Lambda Calculus
 
--   beta reduction
--   alpha equivalence
--   alpha conversion
+-   ~~alpha equivalence and alpha conversion~~
+-   ~~beta reduction~~
 -   encoding
     -   natural numbers
     -   boolean functions
 
 #### Logic
 
--   modelling
+-   modelling systems
+-   "model implies specification"
 -   definitions
-    -   validity
-    -   satisfiability
-    -   boolean functions
--   ~~properties of boolean algebra~~
+    -   ~~validity~~
+    -   ~~satisfiability~~
+    -   ~~SAT solver~~
+    -   ~~SAT problem~~
+    -   ~~undecidability (of predicate logic)~~
+    -   ~~tautology~~
+    -   ~~contradiciton~~
+    -   ~~contradiciton~~
+-   properties of boolean algebra
+    -   ~~duality of existential and universal quantifiers~~
     -   ~~idempotency~~
     -   ~~annihilation~~
     -   ~~identity~~
     -   ~~absorption~~
-    -   ~~duality of existential and universal quantifiers~~
     -   ~~deMorgan's laws~~
+    -   ~~principle of explosion~~
 -   ~~**DPLL**~~
+    -   ~~tautology elimination~~
     -   ~~unit propagation~~
     -   ~~pure literal elimination~~
     -   ~~splitting~~
-    -   ~~tautology elimination~~
 
 ### Introduction to Intelligent Systems
 
--   perceptron
--   backpropagation
--   uniform cost search
--   heuristic search and A\* algorithm
--   puzzle solving and graph search algorithms
--   minimax and alpha-beta prunning
+-   graph searching algorithms
+    -   uniform cost search
+    -   heuristic search and A\* algorithm
+    -   ~~breadth first search~~
+    -   ~~limited depth first search~~
+    -   ~~depth first search~~
+    -   ~~iterative deepening~~
+-   neural networks
+    -   perceptron
+    -   backpropagation
+-   puzzle solving
+-   minimax and alpha-beta pruning
 -   program synthesis
 
 ### Software Engineering
 
--   models (waterfall, spiral, agile ...)
+-   models (approaches)
+    -   plan-driven
+    -   reuse-oriented
+    -   spiral
+    -   agile
+    -   ~~waterfall~~
 -   project planning and documentation
 -   Agile and Scrum
-    -   team
+    -   team (describe roles)
         -   scrum master
         -   product owner
-        -   development team
-    -   ~~sprints~~
-    -   documentation
+    -   ~~documentation~~
         -   ~~product backlog~~
         -   ~~sprint backlog~~
+    -   ~~sprints~~
 
 #### Testing
 
@@ -239,9 +282,9 @@
 -   inputs (random, equivalence partition testing, boundary value analysis)
 -   deriving tests from specification
 -   code coverage (line, function, statement)
--   Test doubles (eg mocks, stubs and drivers)
+-   Test doubles (e.g. mocks, stubs and drivers)
 -   Dependency injection
--   methods of integration testin (top-down, bottom-up, sandwich)
+-   methods of integration testing (top-down, bottom-up, sandwich)
 -   ~~white-box vs black-box~~
 -   ~~functional vs non-functional~~
 -   ~~V & V~~
@@ -250,28 +293,28 @@
 
 #### Design Patterns
 
--   decorator
--   singleton
--   code smell
 -   anti patterns
--   factory method
--   strategy
--   MVC
--   builder
--   command
--   facade
--   observer
+-   code smell
 -   composite
+-   decorator
+-   factory method
 -   visitor
+-   ~~MVC~~
+-   ~~builder~~
+-   ~~command~~
+-   ~~facade~~
+-   ~~observer~~
+-   ~~singleton~~
+-   ~~strategy~~
 
 #### UML
 
--   OCL
--   class diagrams
+-   ~~class diagrams~~
 -   ~~sequence diagrams~~
 -   ~~activity diagrams~~
 -   ~~state diagrams~~
 -   ~~use case diagrams~~
+-   OCL
 
 #### Professional Issues
 
@@ -284,7 +327,7 @@
     -   Computer Misuse Act
     -   Data Protection Act
     -   types of lawyers
-    -   patents
+    -   ~~patents~~
 
 ### Functional and Concurrent Programming
 
@@ -320,6 +363,7 @@
 -   ~~currying~~
 -   ~~function signatures~~
 -   ~~pattern matching~~
+-   ~~if statment~~
 -   ~~functions~~
 -   ~~recursion~~
 -   ~~let clause~~
@@ -327,30 +371,94 @@
 
 ### Web Development
 
--   Web Development
--   Web Frameworks
--   Web Programming
+-   HTTP
+    -   explain how HTTP requests are sent and processed
+    -   request (explain every line)
+        -   `GET /people/staff/iau/x.txt HTTP/1.1`
+        -   `Host: www.cs.kent.ac.uk`
+        -   `User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536 ...`
+        -   `Accept: text/html;q=0.9,text/plain;q=0.8`
+        -   `Accept-Charset: ISO-8859-1,UTF-8;q=0.7,*;q=0.7`
+        -   `Accept-Language: fr,en;q=0.7,en-us;q=0.3`
+        -   `Referer: http://cs.kent.ac.uk/people/staff/iau/index.html`
+    -   response
+        -   `Status` -- including HTTP status codes
+        -   `Date`
+        -   `Server`
+        -   `Last-Modified`
+        -   `Content-Length`
+        -   `Content-Type`
 -   Web Servers
+-   serving dynamic content
+    -   CGI scripts
+-   Apache
+    -   workers
+    -   multiple hosts
+    -   configuration
+    -   command line
+    -   virtual host
+    -   access control
 
 #### CodeIgniter
 
--   CodeIgniter
-
-#### XML and JSON
-
--   XML
--   Web Services
+-   MVC (explain and evaluate)
+    -   Models
+    -   Views
+    -   Controllers
+    -   CRUD
+-   Sessions
+-   Caching
+-   Autoloading
+-   Profiling
+-   Helpers
+    -   URL
+    -   Form
+-   Controllers
+    -   file name, naming convention
+    -   ~~why and where call parent constructor?~~
+    -   ~~non-servable (private) methods~~
+    -   ~~how is routing implemented in CI?~~
+-   Models
+    -   file name, naming convention
+    -   how to connect to the database
+    -   running SQL queries (including parametrised)
+    -   retrieving data from SQL responses
+-   Views
+    -   file name, naming convention
+    -   passing data into views
+    -   how to load a view
+-   Configuration
+    -   `base_url`
+    -   `db`
+-   URL segments
+-   Errors
+    -   Parse
+    -   Fatal
 
 #### Android
 
--   Mobile Web
 -   Android GUIs
--   Android Intro
-
-#### JQuery, JQuery-UI and AJAX
-
--   JQuery
-
-<!--
-vim:foldmethod=indent:nu:foldlevel=20:
--->
+-   Activity
+-   `ViewGroup` and View
+-   `Bundle` and `InstanceSave`
+    -   role
+    -   callbacks
+        -   `void onSaveInstanceState(Bundle)`
+        -   `void onRestoreInstanceState(Bundle)`
+        -   `onCreate()`
+-   Widgets
+    -   `Button`
+    -   `RadioButton`
+    -   `ImageButton`
+    -   `CheckBox`
+    -   `TextView` (single or multi-line)
+-   Layouts (description and configuration)
+    -   `LinearLayouts`
+    -   `TableLayout`
+    -   `RelativeLayout`
+-   XML
+    -   `@color`
+    -   `@string`
+    -   `@+id`
+-   Directories (resources)
+-   Mobile Web

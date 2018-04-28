@@ -1,0 +1,9 @@
+**/.stack-work
+**/.HTML
+**/*.html
+Algorithms-Correctness-and-Efficiency/Haskell
+Functional-and-Concurrent-Programming/Erlang
+.templates
+**/*.pdf
+tags
+**/*.beam

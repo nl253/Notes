@@ -1,41 +1,91 @@
 # Visitor
 
-Represent an operation on many different types as Visitor Objects.
+Instead of polluting the class, represent operations on elements of a
+heterogeneous structure as visitor objects.
 
 ## Classification
 
-*   behavioural
+-   behavioural
 
 ## Problem It Solves
 
-*   You want to carry out the same operation on objects of different types (eg list file and directory)
-*   You don't want to check for types / cast
-*   You have objects with different interfaces and you wish to abstract away the way in which they are traversed
+-   You want to carry out different operations on the same object
+-   You don't want to pollute the class with operations such as:
+    -   print
+    -   getLenght
+    -   addUp
+    -   mult
 
 ## Implementation
 
-1.  Create an _abstract_ Visitor that defines the `visit(visitable)` method.
-2.  Ensure implementors have the `accept(visitor)` method. They are the ones calling it by passing a reference it itself into the function.
+1.  Create an *abstract* Visitor that defines the `visit(visitable)` method.
+2.  Ensure implementors have the `accept(visitor)` method. They are the ones
+    calling it by passing a reference to itself into the function.
 
 ## Example
 
-A `PrintVisitor` may be used to traverse (and print) `Graph`, `Tree`
-and `Heap` objects if it overloads appropriately the `visit()` method:
+``` {.java}
+interface NodeVisitor<E> {
+    E visit(HeadingNode<E> node);
+    E visit(ParaNode<E> node);
+    E visit(OtherNode<E> node);
+}
 
-*   `visit(Graph g);`
-*   `visit(Tree t);`
-*   `visit(Heap h);`
+interface VisitableNode<E> {
+    E accept(NodeVisitor<E> visitor);
+}
 
-We could also have a `CountingVisitor` that counts the elements as it
-traverses them. They way in which that would be done would depend on the
-types of input objects. This will allow us to count nested objects.
+class HeadingNode<E> implements VisitableNode<E> {
+    public String heading;
 
-- `visit(leaf) -> 1`
-- `visit(node) -> 1 + node.getNodes.map(CountingVisitor::visit).sum()`
+    public E accept(NodeVisitor<E> visitor) {
+        return visitor.visit(this);
+    }
+}
+
+class ParaNode<E> implements VisitableNode<E> {
+    public String para;
+
+    public E accept(NodeVisitor<E> visitor) {
+        return visitor.visit(this);
+    }
+}
+
+class OtherNode<E> implements VisitableNode<E> {
+    public String other;
+
+    public E accept(NodeVisitor<E> visitor) {
+        return visitor.visit(this);
+    }
+}
+
+class FmtVisitor extends StrReformatter implements NodeVisitor {
+
+    public String visit(HeadingNode<String> node) {
+        return reformat(node.heading);
+    }
+
+    public String visit(ParaNode<String> node) {
+        return reformat(node.para);
+    }
+
+    public String visit(OtherNode<String> node) {
+        return reformat(node.other);
+    }
+}
+```
 
 ## Notes
 
-*   Visitor encourages lightweight (possibly field-only) classes with
-    functionality stored separately.
-
-vim:wrap:tw=79:linebreak:fo=torcn:
+-   Visitor encourages lightweight (possibly field-only) classes with
+    functionality stored separately i.e. it decouples behaviour from state
+-   good for:
+    -   AST
+    -   file system nodes
+    -   recursive data structures
+-   can apply an operation over a composite
+-   more powerful than command
+    -   it can carry out the right operation depending on the type of objects
+    -   e.g. printing a file would be different to printing a directory --
+        unlike command, visitor could make that distinction and choose the
+        right method
