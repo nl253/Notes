@@ -1,9 +1,9 @@
 # Software Engineering
 
-concerned with best practices that aim at producing high quality, reliable,
-maintainable software
+Software Engineering is concerned with best practices that aim at producing
+high quality, reliable, maintainable software.
 
-Not just about coding, also:
+Not just about coding but also:
 
 -   project management e.g. planning
 -   documentation
@@ -140,3 +140,4 @@ other types of system.
 Web-based systems should be developed and delivered incrementally. It is now
 generally recognized that it is impractical to specify all the requirements for
 such systems in advance.
+

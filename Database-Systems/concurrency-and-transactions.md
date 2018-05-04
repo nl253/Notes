@@ -32,12 +32,14 @@ A [transaction](#transaction) has one of the two outcomes:
 
 ACID properties are encored by different components of the DBMS.
 
+  -------------------------------------------------------------------------------------
   Property      Responsibility
   ------------- -----------------------------------------------------------------------
   atomicity     Recovery Mechanisms
   consistency   DBMS and the transaction implemented to enforce integrity constraints
   isolation     concurrency control mechanisms
   durability    recovery mechanisms
+  -------------------------------------------------------------------------------------
 
 ## Issues with Concurrent Transactions
 
@@ -112,8 +114,7 @@ serializability violation *before* commit.
 3.  Write -- if 2 succeeded, updates are applied to the database, otherwise
     transaction is restarted
 
-
-### Pessimistic Methods 
+### Pessimistic Methods
 
 Pessimistic approaches delay transactions to check for conflict with other
 transactions.

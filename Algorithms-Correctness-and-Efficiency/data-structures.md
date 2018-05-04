@@ -2,8 +2,7 @@
 
 ## Hash Table
 
-A hash table is a **l
-ookup table** that uses an array in which the location of
+A hash table is a **lookup table** that uses an array in which the location of
 each item is found by using a [hash function](#hash-functions).
 
 ### Hash Functions

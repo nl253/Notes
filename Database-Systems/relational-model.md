@@ -2,7 +2,7 @@
 
 ## History
 
-Codd in 1970 proposed the priniciples of the relational model.
+Codd in 1970 proposed the principles of the relational model.
 
 -   logical model (independent of physical representation)
 -   formal model (uses set theory and predicate logic)
@@ -90,10 +90,11 @@ comparing money to date.
 Attributes in a [relation](#relation) may have the same domain. We could have a
 `Person` relation with age (int) and height (cm -- int).
 
-  age   height
-  ----- --------
-  32    189
-  22    201
+  ---------------
+  age    height
+  ------ --------
+  32 22  189 201
+  ---------------
 
 Domains can be:
 
@@ -119,11 +120,13 @@ We might have [**integrity constraints**](#integrity-constraints):
 
 ## Terminology
 
-  Relational Model     Database
-  -------------------- ----------------
-  Relation or Entity   Table or File
-  Tuple                Row or Record
-  Attribute            Colum or Field
+  ----------------------------------
+  Relational Model       Database
+  ------------------- --------------
+  Relation or Entity  Table or File
+  Tuple Attribute     Row or Record
+                      Colum or Field
+  ----------------------------------
 
 ## Glossary
 
@@ -158,10 +161,12 @@ Tuple
 
     For example:
 
-      pid   pname
-      ----- ------------
-      1     toothpaste
-      2     brush
+      --------------------
+      pid     pname
+      ------- ------------
+      1 2     toothpaste
+              brush
+      --------------------
 
     tuples are: \\( (1,\\ toothpaste),\\ (2,\\ brush)\\)
 

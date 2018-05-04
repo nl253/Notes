@@ -62,6 +62,14 @@ Replaced various discrimination laws (incl Disability Act 2005).
 
 **Example in CS** <br/>web sites.
 
+## Computer Misuse Act 1990
+
+See [Computer Misuse Act 1990](./computer-misuse-act.md).
+
+## Data Protetion Act 1999
+
+See [Data Protetion Act](./data-protection-act.md).
+
 ## Glossary
 
 Normative perspective
@@ -154,7 +162,7 @@ Secondary legislation
         -   [rules](#rules)
         -   [directions](#directions)
 
-byelaws
+Byelaws
 
 :   geographically limited laws
 
@@ -165,38 +173,3 @@ Rules
 Directions
 
 :   legally binding operational instructions given to a public body
-
-::: {.admonition}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-:::
-
-::: {.warning}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-:::
-
-::: {.note}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-:::
-
-::: {.danger}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-:::
-
-::: {.topic}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-ssoem nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.
-:::
-
-Idempotency: $$ f(x) = f(f(x)) = f^n(x) $$
-
-Idempotency (inline): \\( f(x) = f(f(x)) = f^n(x) \\)

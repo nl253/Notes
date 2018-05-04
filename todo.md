@@ -6,15 +6,15 @@
     -   laptop case
 -   talk to grandparents
     -   probably write a letter + thank for the money
--   wait for Simon's reply
--   `Writer`, `Reader` and `State` monads
--   possible uses of `MonadPlus` and `Alternative`
+-   Simon
+    -   wait for Simon's reply for until 2 weeks have passed
+-   Find a group for next year's project
 
 ## Revision
 
 ### Algorithms, Correctness and Efficiency
 
--   ~~stack frames~~
+- ~~stack frames~~
 
 #### Big O notation
 
@@ -70,9 +70,9 @@
 #### Sorting Algorithms
 
 -   ~~**insertion sort**~~
--   ~~bubble sort~~
 -   ~~**merge sort**~~
 -   ~~**quicksort**~~
+-   ~~bubble sort~~
 
 #### Other
 
@@ -97,26 +97,47 @@
 
 #### Modelling
 
--   physical
--   issues
+##### Conceptual
+
+-   entity-relational diagrams
+-   hierarchical relationships
+-   how to create a conceptual model
+    -   entities (relations)
+    -   attributes
+    -   relationships
+-   constraints
+    -   multiplicities
+    -   attributes domains
+
+##### Logical
+
+-   resolving issues
     -   fan-in
     -   fan-out
+    -   many to many relationships
+        -   association entities
+        -   1 table (add field `isTableA BOOLEAN`, make other fields nullable)
+        -   2 tables
 -   ~~relations~~
-    -   ~~total~~
-    -   ~~partial~~
--   ~~conceptual~~
--   ~~logical~~
+    -   unary (recursive)
+    -   binary
+        -   ~~total/partial~~
+    -   tenary
+    -   n-ary
+
+##### Physical
 
 #### Relational Algebra
 
+-   rename
 -   translate from SQL to relational algebra
 -   translate from relational algebra to SQL
 -   set operations
     -   difference
+    -   intersection
     -   union
     -   cartesian product
 -   selection
--   rename
 -   projection
 -   joins
     -   equijoin
@@ -126,7 +147,6 @@
 
 #### SQL
 
--   ~~casting~~
 -   nested queries
 -   aggregate queries
     -   ~~`GROUP BY`~~
@@ -135,8 +155,7 @@
     -   adding constraints
         -   ~~foreign key~~
         -   ~~(composite) primary key~~
-
-#### Normalisation
+-   ~~casting~~
 
 #### ACID
 
@@ -209,11 +228,11 @@
 
 #### Lambda Calculus
 
--   ~~alpha equivalence and alpha conversion~~
--   ~~beta reduction~~
 -   encoding
     -   natural numbers
     -   boolean functions
+-   ~~alpha equivalence and alpha conversion~~
+-   ~~beta reduction~~
 
 #### Logic
 
@@ -244,26 +263,29 @@
 
 ### Introduction to Intelligent Systems
 
--   graph searching algorithms
-    -   uniform cost search
-    -   heuristic search and A\* algorithm
-    -   ~~breadth first search~~
-    -   ~~limited depth first search~~
-    -   ~~depth first search~~
-    -   ~~iterative deepening~~
 -   neural networks
     -   perceptron
     -   backpropagation
 -   puzzle solving
 -   minimax and alpha-beta pruning
 -   program synthesis
+-   ~~graph searching algorithms~~
+    -   ~~uniform cost search~~
+    -   ~~heuristic search and A\* algorithm~~
+    -   ~~breadth first search~~
+    -   ~~limited depth first search~~
+    -   ~~depth first search~~
+    -   ~~iterative deepening~~
 
 ### Software Engineering
 
--   models (approaches)
-    -   plan-driven
+#### Architeectural Patterns
+
+##### Models
+
+-   plan-driven
     -   reuse-oriented
-    -   spiral
+		-   spiral
     -   agile
     -   ~~waterfall~~
 -   project planning and documentation
@@ -329,6 +351,7 @@
     -   types of lawyers
     -   ~~patents~~
 
+
 ### Functional and Concurrent Programming
 
 #### Erlang
@@ -371,41 +394,41 @@
 
 ### Web Development
 
--   HTTP
-    -   explain how HTTP requests are sent and processed
-    -   request (explain every line)
-        -   `GET /people/staff/iau/x.txt HTTP/1.1`
-        -   `Host: www.cs.kent.ac.uk`
-        -   `User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536 ...`
-        -   `Accept: text/html;q=0.9,text/plain;q=0.8`
-        -   `Accept-Charset: ISO-8859-1,UTF-8;q=0.7,*;q=0.7`
-        -   `Accept-Language: fr,en;q=0.7,en-us;q=0.3`
-        -   `Referer: http://cs.kent.ac.uk/people/staff/iau/index.html`
-    -   response
-        -   `Status` -- including HTTP status codes
-        -   `Date`
-        -   `Server`
-        -   `Last-Modified`
-        -   `Content-Length`
-        -   `Content-Type`
--   Web Servers
+#### HTTP
+
+-   explain how HTTP requests are sent and processed
+-   request (explain every line)
+    -   `GET /people/staff/iau/x.txt HTTP/1.1`
+    -   `Host: www.cs.kent.ac.uk`
+    -   `User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536 ...`
+    -   `Accept: text/html;q=0.9,text/plain;q=0.8`
+    -   `Accept-Charset: ISO-8859-1,UTF-8;q=0.7,*;q=0.7`
+    -   `Accept-Language: fr,en;q=0.7,en-us;q=0.3`
+    -   `Referer: http://cs.kent.ac.uk/people/staff/iau/index.html`
+-   response
+    -   `Status` -- including HTTP status codes
+    -   `Date`
+    -   `Server`
+    -   `Last-Modified`
+    -   `Content-Length`
+    -   `Content-Type`
+
+#### Web Servers
+
 -   serving dynamic content
     -   CGI scripts
--   Apache
-    -   workers
-    -   multiple hosts
-    -   configuration
-    -   command line
-    -   virtual host
-    -   access control
+
+#### Apache
+
+-   workers
+-   multiple hosts
+-   configuration
+-   command line
+-   virtual host
+-   access control
 
 #### CodeIgniter
 
--   MVC (explain and evaluate)
-    -   Models
-    -   Views
-    -   Controllers
-    -   CRUD
 -   Sessions
 -   Caching
 -   Autoloading
@@ -413,27 +436,41 @@
 -   Helpers
     -   URL
     -   Form
--   Controllers
-    -   file name, naming convention
-    -   ~~why and where call parent constructor?~~
-    -   ~~non-servable (private) methods~~
-    -   ~~how is routing implemented in CI?~~
--   Models
-    -   file name, naming convention
-    -   how to connect to the database
-    -   running SQL queries (including parametrised)
-    -   retrieving data from SQL responses
--   Views
-    -   file name, naming convention
-    -   passing data into views
-    -   how to load a view
--   Configuration
+-   URL segments
     -   `base_url`
     -   `db`
--   URL segments
 -   Errors
     -   Parse
     -   Fatal
+
+##### MVC
+
+Explain and evaluate:
+
+-   Models
+-   Views
+-   Controllers
+-   CRUD
+
+##### Controllers
+
+-   file name, naming convention
+-   ~~why and where call parent constructor?~~
+-   ~~non-servable (private) methods~~
+-   ~~how is routing implemented in CI?~~
+
+##### Models
+
+-   file name, naming convention
+-   how to connect to the database
+-   running SQL queries (including parametrised)
+-   retrieving data from SQL responses
+
+##### Views
+
+-   file name, naming convention
+-   passing data into views
+-   how to load a view
 
 #### Android
 
@@ -462,3 +499,7 @@
     -   `@+id`
 -   Directories (resources)
 -   Mobile Web
+
+<!--
+LocalWords:  CodeIgniter
+ -->

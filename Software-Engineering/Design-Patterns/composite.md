@@ -7,7 +7,7 @@
 ## When to Use
 
 -   recursive data structure
--   AST
+-   Abstract Syntax Tree
 -   file system (files and directories)
 -   you have some hierarchy where a composite object (i.e. a node) is treated
     differently than a primitive object (i.e. a leaf).

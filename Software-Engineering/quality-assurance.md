@@ -77,7 +77,7 @@ Demonstrate to stakeholders that the product conforms to the specification.
 2.  Defect Testing
 
 Discover bugs before the software is put to use. Software is exposed to a set
-of test cases (i.e. a [test suite](#test-suite)) which need to reflect the way
+of test cases (i.e. a [test suite](#test-suite)) which need to reflect the way
 it's supposed to be used.
 
 **Weaknesses of Testing**
@@ -101,7 +101,7 @@ it's supposed to be used.
 #### Inspections
 
 Inspections are a static verification technique for analysing code. They are
-fairly effective in improving the code quality (e.g. IDE inspections might
+fairly effective in improving the code quality (e.g. IDE inspections might
 encourage 'best' practices such as favouring immutability `final String s` vs
 `String s`) but also discovering possible bugs (e.g. `'n'` instead of
 `System.lineSeparator()`).
@@ -111,8 +111,8 @@ encourage 'best' practices such as favouring immutability `final String s` vs
 There are some advantages to inspections that make them better than other
 techniques.
 
--   they are easy to carry out -- unlike automated testing they don't require to
-    plan and write a test suite to discover issues
+-   they are easy to carry out -- unlike automated testing they don't require
+    to plan and write a test suite to discover issues
 -   they are cheap to carry out compared to techniques such as alpha testing
     which might take hours for which the tester will have to be paid
 -   they might be safer since the code is not executed
@@ -170,15 +170,15 @@ their tests.
 
 **Origin**
 
-TDD was originally very popular in agile development (particularly XP -- Extreme
-Programming) but has now become a widely accepted practice in agile as well
-plan-driven methods-driven development methods.
+TDD was originally very popular in agile development (particularly XP --
+Extreme Programming) but has now become a widely accepted practice in agile as
+well plan-driven methods-driven development methods.
 
 **Benefits of TDD**
 
 1.  Passing the tests which are based on system requirements means that the
     system implements the required functionality and meets the specification.
-    Therefor it helps to verify the system and improves confidence in it's
+    Therefore it helps to verify the system and improves confidence in it's
     implementation of requirements.
 2.  It forces the programmer to write code that is directly relevant to the
     required functionality. It also forces the programmer to be conscious of
@@ -191,8 +191,8 @@ plan-driven methods-driven development methods.
     correctly implements functionality rom stage 1, 2 and 3. It promotes
     confidence in the correctness of the way the system has been implemented.
     This is referred to as **regression testing**.
-4.  Defects in code are quickly (i.e. in early stages) and easily (after a failed
-    test) discovered.
+4.  Defects in code are quickly (i.e. in early stages) and easily (after a
+    failed test) discovered.
 5.  A test suite that TDD will help to produce might act as documentation. We
     would expect it to list in a detailed manner all the required functionality
     and expected behaviour of the system. Tools such as `javadoc` can be used
@@ -200,8 +200,8 @@ plan-driven methods-driven development methods.
 
 **Weaknesses of TDD**
 
-1.  Typically an external libera is required (e.g. JUnit). This means there is an
-    additional dependency in the project.
+1.  Typically an external libera is required (e.g. JUnit). This means there is
+    an additional dependency in the project.
 2.  Requires understanding of specification. The programmer must know in
     advance what features to write tests for.
 3.  TDD goes hand in hand with automated unit testing. It might be difficult to
@@ -248,13 +248,36 @@ Faults
 :   are flaws (defects) in the system such as bugs.
 
 Functional requirements
-
 :   are about what the system is supposed to do. E.g. the system shall enable
     it's users to access their accounts.
 
 Non-functional requirements
-:   are about what the system is supposed to be. E.g. the system will be
-    user-friendly.
+
+:   are about what the system is supposed to be like.
+
+    E.g. the system will be user-friendly.
+
+    Describe aspects of the system that do not specifically provide user
+    functionality but are required to support delivery of the functions.
+
+    -   Their implementation may require additional functional requirements to
+        be made.
+    -   Examples include product requirements, such as:
+
+        -   Response Times
+        -   Storage capacity
+        -   Security
+
+    Other non-functional constraints that may affect a system might also
+    include:
+
+    -   External considerations such as legal, ethical or regulatory
+        requirements.
+    -   How the users and developers organise/ons work, e.g. in an open plan
+        office (confidentiality), using prescribed development tools,
+        languages, frameworks, etc.
+    -   Non-functional requirements often affect the overall system
+        architecture.
 
 Mock objects
 :   sometimes called stubs act as dummy objects that stand in place of the

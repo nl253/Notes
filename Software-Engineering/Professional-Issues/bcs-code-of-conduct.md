@@ -4,11 +4,11 @@ As a professional body the British Computer Society (known as BCS, the
 Chartered Institute for IT), has a responsibility to set rules and professional
 standards to direct the behaviour of its members in professional matters.
 
-| It is expected that these rules and professional standards will be higher than
-| those established by the general law and that they will be enforced through
-| disciplinary action which can result in expulsion from membership. Members are
-| expected to exercise their own [judgement](#professional-judgement)(which
-| should be made in such a way as to be reasonably justified) to meet the
+It is expected that these rules and professional standards will be higher than
+those established by the general law and that they will be enforced through
+disciplinary action which can result in expulsion from membership. Members are
+expected to exercise their own [judgement](#professional-judgement)(which
+should be made in such a way as to be reasonably justified) to meet the
 requirements of the code and seek advice if in doubt.
 
 ## Breaches of the Code of Conduct
@@ -42,7 +42,7 @@ This Code of Conduct:
 
     You shall:
 
-    a)  have due regard for public health, privacy, security and wellbeing of
+    a)  have due regard for public health, privacy, security and well-being of
         others and the environment.
 
     b)  have due regard for the legitimate rights of [Third
@@ -139,11 +139,10 @@ This Code of Conduct:
 If you are in a leadership position and especially if you hold an executive
 position you are expected to:
 
--   encourage and facilitate colleagues to develop as professionals.
+-   encourage and facilitate colleagues to develop as professionals
 -   seek to ensure that no one is penalised for raising areas of concern or
-    conflicts of interest.
--   encourage colleagues to follow this code of conduct.
-
+    conflicts of interest
+-   encourage colleagues to follow this code of conduct
 
 ## Glossary
 
@@ -178,8 +177,8 @@ Professional judgement
         [Relevant Authority's](#relevant-authority) instructions and the
         independent and considered exercise of your professional judgement, you
         will indicate the likely risks and consequences.
-    -   If any conflict is likely to occur or be seen by a [third party](#third-party)
-        as likely to occur you will make full and
+    -   If any conflict is likely to occur or be seen by a [third
+        party](#third-party) as likely to occur you will make full and
         immediate disclosure to your [Relevant Authority.](#relevant-authority)
     -   If for any reason you are unable to complete any assigned tasks in
         accordance with their requirements (e.g) on time or within budget) you
@@ -206,10 +205,9 @@ Legislation
 
 :   any applicable laws, statutes and regulations.
 
-
 Professional Competence and Integrity
 
-  : All members are required to undertake professional development activities
+:   All members are required to undertake professional development activities
     as a condition of membership. Continuing professional development
     activities should broaden your knowledge of the IT profession and maintain
     your competence in your area of specialism.
