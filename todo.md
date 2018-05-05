@@ -228,6 +228,7 @@
 
 #### Lambda Calculus
 
+
 -   encoding
     -   natural numbers
     -   boolean functions
@@ -235,6 +236,7 @@
 -   ~~beta reduction~~
 
 #### Logic
+
 
 -   modelling systems
 -   "model implies specification"
@@ -263,6 +265,7 @@
 
 ### Introduction to Intelligent Systems
 
+
 -   neural networks
     -   perceptron
     -   backpropagation
@@ -276,81 +279,6 @@
     -   ~~limited depth first search~~
     -   ~~depth first search~~
     -   ~~iterative deepening~~
-
-### Software Engineering
-
-#### Architeectural Patterns
-
-##### Models
-
--   plan-driven
-    -   reuse-oriented
-		-   spiral
-    -   agile
-    -   ~~waterfall~~
--   project planning and documentation
--   Agile and Scrum
-    -   team (describe roles)
-        -   scrum master
-        -   product owner
-    -   ~~documentation~~
-        -   ~~product backlog~~
-        -   ~~sprint backlog~~
-    -   ~~sprints~~
-
-#### Testing
-
--   levels (unit, component, integration, system)
--   inputs (random, equivalence partition testing, boundary value analysis)
--   deriving tests from specification
--   code coverage (line, function, statement)
--   Test doubles (e.g. mocks, stubs and drivers)
--   Dependency injection
--   methods of integration testing (top-down, bottom-up, sandwich)
--   ~~white-box vs black-box~~
--   ~~functional vs non-functional~~
--   ~~V & V~~
--   ~~acceptance testing~~
--   ~~TDD~~
-
-#### Design Patterns
-
--   anti patterns
--   code smell
--   composite
--   decorator
--   factory method
--   visitor
--   ~~MVC~~
--   ~~builder~~
--   ~~command~~
--   ~~facade~~
--   ~~observer~~
--   ~~singleton~~
--   ~~strategy~~
-
-#### UML
-
--   ~~class diagrams~~
--   ~~sequence diagrams~~
--   ~~activity diagrams~~
--   ~~state diagrams~~
--   ~~use case diagrams~~
--   OCL
-
-#### Professional Issues
-
--   organisations
-    -   certifications
-    -   IET
-    -   BSC
-    -   BSC Code of Conduct
--   law in the UK (common vs civil)
-    -   Computer Misuse Act
-    -   Data Protection Act
-    -   types of lawyers
-    -   ~~patents~~
-
 
 ### Functional and Concurrent Programming
 

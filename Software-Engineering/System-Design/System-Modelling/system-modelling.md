@@ -3,9 +3,9 @@
 ## Introduction
 
 - complexity of the problem domain and software
-- other engineering disciplines rely heaviliy on models
+- other engineering disciplines rely heavily on models
 - a large software product is a large investment -- we cannot afford to mess it up
-- it's difficult to explan and exchange ideas about design between team members
+- it's difficult to explain and exchange ideas about design between team members
 
 See [system modelling](#system-modelling).
 
@@ -13,15 +13,15 @@ See [system modelling](#system-modelling).
 
 - they help to understand the structure and behaviour of the system
     - structure: understanding the system in terms of components (i.e. sub-systems)
-    - behaviour: understanding the system in terms of interactions between 
+    - behaviour: understanding the system in terms of interactions between
       components
 - communicate with stakeholders (mostly customers but also others)
 
-Models of the **existing system** should be produced during 
+Models of the **existing system** should be produced during
 **requirements engineering**. They can be helpful in:
 
 - clarifying what the existing system does
-- identifying it's strenghts and weaknesses
+- identifying it's strengths and weaknesses
 - facilitating discussion about what the new system might be like
 
 Models of the **new system** are created by the system architects to explain
@@ -44,9 +44,9 @@ Useful for:
       requirements
     - can be used to discover and highlight communication problems in
       system-system interaction
-    - helps to understand if the proposed system is likley to deliver the
+    - helps to understand if the proposed system is likely to deliver the
       required performance and dependability
-    - e.g.: UML use case and UML sequence diagrams can be used for interaction 
+    - e.g.: UML use case and UML sequence diagrams can be used for interaction
       modelling
 - structural
     - models the organisation of the system and how it responds to events
@@ -58,13 +58,13 @@ Useful for:
         - dynamic (show the organisation of the system when it's executing)
 - behavioural
     - models the dynamic (i.e. runtime) behaviour of the system and how it
-      reponds to events
+      responds to events
     - shows what happens or what is supposed to happen when a system responds to
       a stimulus (e.g.: data or event i.e. a trigger) from it's environment
 
 ### Context Models
 
-Show how a system is positioned in an environment with oterh systems and processes.
+Show how a system is positioned in an environment with other systems and processes.
 
 ### Interaction Models
 
@@ -88,7 +88,7 @@ From the perspective of:
 See [model driven engineering](#model-driven-engineering)
 
 Model-Driven Engineering is still in early stages of development.
-It's unclear if it will have a significan effect on software engineering practice.
+It's unclear if it will have a significant effect on software engineering practice.
 
 **Advantages**:
 
@@ -100,7 +100,7 @@ It's unclear if it will have a significan effect on software engineering practic
 **Disadvantages**:
 
 - models for abstraction are not necessarily right for implementation
-- even if you save money by generating the code from models, you migh have to
+- even if you save money by generating the code from models, you might have to
   spend it on developing model-to-code translators for new platforms
 
 The precursor of Model-Driven Engineering was **Model-Driven Architecture**.
@@ -110,7 +110,7 @@ The precursor of Model-Driven Engineering was **Model-Driven Architecture**.
 
 ## Data-Driven Modelling
 
-Data-processing systems that are primarly driven by data:
+Data-processing systems that are primary driven by data:
 
 - controlled by the data input to the system with relatively little external
   even processing e.g.: business systems
@@ -121,14 +121,14 @@ Data-processing systems that are primarly driven by data:
 - generating an associated output
 - useful during analysing requirements as they can be used to show an end-to-end
   processing in a system model-driven architecture
-  
+
 ## Event-Driven Modelling
 
 Shows:
 
 - how a system responds to external and internal events
 - based on the assumption that a system has a finite number of states (stimuli
-  may cause a transiton from a state to anoter)
+  may cause a transition from a state to another)
 
 E.g.: **State Machine Models** (such as UML State Diagrams)
 
@@ -139,8 +139,8 @@ E.g.: **State Machine Models** (such as UML State Diagrams)
 
 - What constitutes the system is affected by social and organisational concerns.
 - Defining a system boundary is a difficult decision. It might put pressure on
-  some parts of the organisation. 
-  
+  some parts of the organisation.
+
 E.g.: more functionality in the system means more work for software developers.
 
 ## UML
@@ -148,7 +148,7 @@ E.g.: more functionality in the system means more work for software developers.
 ### Class Diagrams
 
 - describe types of objects in the system and the **static relationships** that
-  exist between them 
+  exist between them
 - show **structural features** of a class
 - show **properties** and **operations** (i.e. **features**) of a class
 - show the **constraints** that apply to the way objects are connected
@@ -156,7 +156,7 @@ E.g.: more functionality in the system means more work for software developers.
 
 #### Attributes
 
-Formula: 
+Formula:
 
 `[visibility] <name>: [type] [\[multiplicity\]] [= default] [{property, ... }]`
 
@@ -164,31 +164,31 @@ E.g.: `title: String [1] = "Untitled" {readonly}`
 
 #### Associations
 
-- Alternative way to dentoe a property.
+- Alternative way to denote a property.
 - The same information (e.g.: field `title` in a `Book` class) can be shown as
   an association to another class
 - Attributes tend to be used for primitive type such as: `Boolean` and `String`.
 - Associations are added to significant classes such as: `Database` and `Client`.
 - Associations are denoted by a solid arrow from the source (containing) class
   to the target.
-- Mulitplicity can be written on both arrow ends
+- Multiplicity can be written on both arrow ends
 - In addition to unidirectional associations there are also bidirectional
   associations. I.e. the arrow may point from `A` to `B` and from `B` to `A`.
     - may be useful when a `Person` has a `Car vehicle` but the `Car` also has an
-      `Person owner` 
+      `Person owner`
     - both of them can send messages to each other
     - if the association is unidirectional then only the source sends messages
 
-#### Mulitplicities 
+#### Mulitplicities
 
 E.g.:
 
 - `[1]` -- this is implicit
 - `[10]` -- exactly 10
-- `[*]` -- any number 
+- `[*]` -- any number
 - `[1..10]` -- ranges are OK
 
-Mulitplicities can be specified in fields and at both end of associations.
+Multiplicities can be specified in fields and at both end of associations.
 
 #### Visibility
 
@@ -200,7 +200,7 @@ Visibility can be specified in fields and at both end of associations.
 
 #### Role Names vs Association Names
 
-It's OK to label role names on both ends of the association arrow. 
+It's OK to label role names on both ends of the association arrow.
 
 E.g.: if `Company` is associated to `Person`, we could label `Person` at the
 other end with "manager" or "customer" if that is appropriate.
@@ -230,7 +230,7 @@ We can make instances of classes using the notation:
 ##### Stereotypes
 
 - allow to extend UML (extra classification to model items)
-- e.g.: `<< interface >>`, `<< persistent >>`, `<< table >>`, `<< enumeration >>` 
+- e.g.: `<< interface >>`, `<< persistent >>`, `<< table >>`, `<< enumeration >>`
   on a class, `<< use >>` on a dependency
 - part of **profiles**
 - help to tailor the diagram to fit a particular domain
@@ -239,8 +239,8 @@ We can make instances of classes using the notation:
 
 - a dependency exists between the source and target when a change in definition
   of source affect the target
-- depdenency is between classes, not objects of those classes
-- built-in depdenencies: 
+- dependency is between classes, not objects of those classes
+- built-in dependencies:
     - `<< call >>` -- source calls operations on the target
     - `<< create >>` -- source creates an instance of target
     - `<< instantiate >>` -- source is an instance of target
@@ -249,7 +249,7 @@ We can make instances of classes using the notation:
 ##### Generalisation
 
 - corresponds to inheritance
-- extend and reuse funcitonality of a class
+- extend and reuse functionality of a class
 - used to model "is-a" relationships
 - subclass inherits all attributes and operations
 - subclass may override them
@@ -264,7 +264,7 @@ We can make instances of classes using the notation:
   target cannot exists without the source
 - "owned by value"
 
-##### Interfaces 
+##### Interfaces
 
 - similar to classes but don't list fields
 - only list operations
@@ -344,8 +344,8 @@ Emphasise structure.
 ## Glossary
 
 System Modelling
-:   apprach to software development where a system is represented as a set of
-    models that can be automcatically transformed to executable code
+:   approach to software development where a system is represented as a set of
+    models that can be automatically transformed to executable code
 
 Model-driven engineering
 :   aims to  generate a complete or partial system implementation from the
