@@ -3,6 +3,8 @@
 **/*.html
 Algorithms-Correctness-and-Efficiency/Haskell
 Functional-and-Concurrent-Programming/Erlang
+Web-Development/CodeIgniter
+**/*.iml
 .templates
 **/*.pdf
 **/*.pptx

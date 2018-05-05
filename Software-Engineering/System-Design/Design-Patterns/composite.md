@@ -1,8 +1,11 @@
 # Composite
 
+![](./composite.png)
+
 -   Compose objects into tree-like structures.
 -   "Directories contain entries, each of which could be a directory."
 -   Let A be the parent of B and C where B is a primitive and C stores As.
+
 
 ## When to Use
 
@@ -13,6 +16,8 @@
     differently than a primitive object (i.e. a leaf).
 -   you don't want to query the type (`instanceof`) before carrying out each
     operation (see below for what composite avoids)
+
+## What it Avoids
 
 ``` {.java}
 class Directory extends FSNode {
@@ -43,7 +48,7 @@ class Directory extends FSNode {
 }
 ```
 
-## Impelemtnation
+## Implementation
 
 1.  Common interface
 2.  Primitive type

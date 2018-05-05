@@ -22,9 +22,9 @@ Codd in 1970 proposed the principles of the relational model.
 
     For example:
 
-    -   Person
-    -   knows
-    -   marriedTo
+    -   `Person`
+    -   `Knows`
+    -   `MarriedTo`
 
 -   data constraints
 -   [relational operators](#relational-operators)
@@ -59,7 +59,7 @@ $$
 $$
 
 A relation is a table with rows and columns. It represents an entity or a class
-(eg. Student).
+(e.g. Student).
 
 Because relations are sets of tuples, all set related properties apply:
 
@@ -70,31 +70,30 @@ Because relations are sets of tuples, all set related properties apply:
 
 ## Domain
 
-a set of possible values that an [attribute](#attribute) can take
+Domain is a set of possible values that an [attribute](#attribute) can take.
 
 For example:
 
--   integer
--   date
--   float
--   string (varchar or text)
--   money
--   decimal
+-   `INTEGER`
+-   `DATE`
+-   `FLOAT`
+-   `STRING` (`VARCHAR` or `TEXT`)
+-   `MONEY`
+-   `DECIMAL`
 
 Like in programming languages it makes it possible to put restrictions on the
 types of operations we can carry out.
 
-The 'type sytem' prevents us from adding for example: a string to an int or
+The 'type system' prevents us from adding for example: a string to an int or
 comparing money to date.
 
 Attributes in a [relation](#relation) may have the same domain. We could have a
 `Person` relation with age (int) and height (cm -- int).
 
-  ---------------
-  age    height
-  ------ --------
-  32 22  189 201
-  ---------------
+  age   height
+  ----- --------
+  32    201
+  22    189
 
 Domains can be:
 
@@ -108,25 +107,60 @@ Domains can be:
 
 ## Database Constraints
 
--   at any time a [database](#database) is a 'snaphshot of reality'
--   the defintion of a database encompasses [integrity
+-   at any time a [database](#database) is a 'snapshot of reality'
+-   the definition of a database encompasses [integrity
     contrains](#entity-integrity)
 
 We might have [**integrity constraints**](#integrity-constraints):
 
 -   [entity integrity](#entity-integrity)
 -   [referential integrity](#referential-integrity)
--   application/database-specific -- equivaltnt to business rules
+-   application/database-specific -- equivalent to business rules
 
-## Terminology
+## Relational Algebra
 
-  ----------------------------------
-  Relational Model       Database
-  ------------------- --------------
-  Relation or Entity  Table or File
-  Tuple Attribute     Row or Record
-                      Colum or Field
-  ----------------------------------
+Proposed by Codd as a language for describing data manipulation.
+
+  Relational Algebra                               Relational Calculus
+  ------------------------------------------------ ------------------------------------
+  Not user-friendly                                Not user-friendly
+  Procedural (describes how to achieve a result)   Declarative (describes the result)
+  Academic (not very practical)                    Academic (not very practical)
+  Basis for SQL                                    
+  Implementable                                    
+
+### Operations
+
+Note that because relations are sets of tuples, they *do not* contain duplicate
+items.
+
+#### Unary Operations
+
+  Operation   Role or Purpose                                           Syntax
+  ----------- --------------------------------------------------------- -------------------------------------------------
+  Restrict    Get a subset of all tuples from the input relations       `RESTRICT <relation> WHERE <condition>`
+  Project     Get a subset of the attributes from the input relations   `PROJECT <relation> OVER <attr> [, attr2, ...]`
+
+#### Binary Operations
+
+  Operation           Description                                                 Syntax
+  ------------------- ----------------------------------------------------------- ----------------------------------------
+  Cartesian Project   Set operation, forms a set of tuples from input relations   `<relation1> x <relation2>`
+  Natural Join        Join relations on common attributes                         `<relation1> NATURAL JOIN <relation2>`
+  Equi-Join           Join relations using an equality relation as a condition    `<relation1> >< x = y <relation2>`
+
+-   Outer Joins
+    -   Full Outer Join
+    -   Left Outer Join
+    -   Right Outer Join
+
+## Relational vs Database (SQL) Terminology
+
+  Relational Model              Database (SQL)
+  ----------------------------- -----------------
+  Relation or Entity            Table or File
+  Tuple or instance of entity   Row or Record
+  Attribute                     Column or Field
 
 ## Glossary
 
@@ -156,19 +190,17 @@ NULL
 
 Tuple
 
-:   -   instance (ie occurrence) of an [entity](#relation)
+:   -   instance (i.e. occurrence) of an [entity](#relation)
     -   corresponds to a row in SQL [databases](#database).
 
     For example:
 
-      --------------------
-      pid     pname
-      ------- ------------
-      1 2     toothpaste
-              brush
-      --------------------
+      pid   pname
+      ----- ------------
+      1     toothpaste
+      2     brush
 
-    tuples are: \\( (1,\\ toothpaste),\\ (2,\\ brush)\\)
+    Tuples are: \\( (1,\\ toothpaste),\\ (2,\\ brush)\\)
 
 Entity Integrity
 
@@ -218,19 +250,23 @@ Alternate key
     key](#primary-key), the remaining candidate keys are referred to as
     alternate keys
 
-Composity Key
+Composite Key
 
 :   a key consisting of more than one [attributes](#attribute)
 
 Relational Operators
 
-:   -   restrict
-    -   project
-    -   cartesian product
-    -   union
-    -   difference
+:   **In order of importance**:
 
-    ...
+    -   restrict
+    -   project
+    -   cartesian product (set theoretic)
+    -   union (set theoretic)
+    -   difference (set theoretic)
+    -   intersection (set theoretic)
+    -   natural join (derived from cartesian product and restrict)
+    -   outer joins (full outer join, left outer join, right outer join)
+    -   rename (not covered)
 
 Foreign Key
 

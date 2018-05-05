@@ -91,7 +91,10 @@ Bottom: **Linux Kernel** i.e.
 ```
 
 -   **Intent**
-    -   used to activate Activities, Services and Broadcast Receivers
+    -   used to activate Activities (`startActivity`), Services
+        (`startService`, also communicate with a background Service
+        `bindService`) and Broadcast Receivers (`broadcastIntent`)
+    -   abstract description of an operation to be performed.
 
 > An intent is an abstract description of an operation to be performed.
 >
@@ -104,8 +107,10 @@ Bottom: **Linux Kernel** i.e.
 > -- From <https://developer.android.com/reference/android/content/Intent>
 
 -   **Content Provider**
-    -   Make data available to other applications, typically from an on-device
-        SQLite database
+    -   Share data between applications, typically from an on-device SQLite
+        database.
+    -   If you don't need to do it you can just use a database
+        directly via `SQLiteDatabase`.
 
 ### The Manifest File
 
@@ -157,7 +162,7 @@ import android.os.Bundle;
 public class HelloActivity extends Activity {
 
         public HelloActivity() { ... }
-
+                              an  
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -181,8 +186,18 @@ public class HelloActivity extends Activity {
     -   `onResume()`
     -   `onDestroy()`
     -   `onPause()`
+    -   **NOTE**: You can overwrite those methods and perform some utility
+        actions such as displaying info about the state from a `ContentProvider`
     -   **NOTE**: `Bundle savedInstanceState` is a key-value storage structure
         to hold application data between invocations (like a session variable)
+- **NOTE**: activities are stopped when another activity comes in front of them
+  and they are no longer visible. When stopped, they retain their state.
+  After being stopped, they can be restarted if the user reopens them which triggers the `onRestart()`,
+  `onStart()` and `onResume()` callbacks.
+- `onCreate()` is only run when the activity is not stopped and is not paused.
+  I.e. after the process was killed.
+- If an activity wants to persist it's state it must save it in some persistent
+  storage (e.g. `ContentProvider`).
 
 ## Services
 
@@ -285,7 +300,10 @@ languages.
 
 ### Layouts
 
-Can be nested e.g.:
+All extend `ViewGroup` (which extends `View`). A `Viewgroup` has the capacity
+to contain within itself a number of `View`s.
+
+Layouts (`ViewGroup`s) Can be nested e.g.:
 
 ``` {.xml}
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
@@ -309,6 +327,28 @@ Can be nested e.g.:
 ```
 
 To set a layout: call `setContentView(View v)`.
+
+Layouts:
+
+- `LinearLayout` (there is a vertical and horizontal version)
+- `RelativeLayout` (allows to position widgets relative to each other -- above,
+  below, centred)
+- `TableLayout` (borderless stack of table rows)
+- (new) `ConstraintLayout`
+- (new) `FrameLayout`
+
+To fire a callback when a button (i.e. a widget) has been pressed you need to
+assign the name of the callback to the "on click" property.
+
+### Widgets
+
+Examples:
+
+- Button
+- RadioButton
+- CheckBox
+- CalendarView
+- TextView
 
 ### Using Resources
 

@@ -1,48 +1,31 @@
-# Visitor
-
-Instead of polluting the class, represent operations on elements of a
-heterogeneous structure as visitor objects.
-
-## Classification
-
--   behavioural
-
-## Problem It Solves
-
--   You want to carry out different operations on the same object
--   You don't want to pollute the class with operations such as:
-    -   `print()`
-    -   `getLenght()`
-    -   `addUp()`
-    -   `mult()`
-
-## Implementation
-
-1.  Create an *interace* `IVisitor<E>` that defines the `E visit(IVisitable visitable)` method.
-2.  Ensure implementors have the `E accept(IVisitor<E> visitor)` method. They are the ones
-    calling it by passing a reference to itself into the function.
-
-## Example
-
-``` {.java}
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 interface IVisitable<E> {
+
     E accept(IVisitor<E> visitor);
 }
 
 
 @FunctionalInterface
 interface IVisitor<E> {
+
     E visit(IVisitable<E> visitable);
 }
 
-class BinaryTreeAdder implements IVisitor<Integer> {
+public final class Visitor {
 
+    private Visitor() {}
 
-    @Override
+    public static void main(final String... args) {
+        final IVisitable<Integer> tree = new BinaryTree(1, 2, 3, 4, 5);
+        System.out.println("Result is: " + tree.accept(new Adder()));
+    }
+
+    private static class Adder implements IVisitor<Integer> {
+
+        @Override
         public final Integer visit(final IVisitable<Integer> visitable) {
             if (visitable == null) return 0;
             int result = 0;
@@ -52,6 +35,7 @@ class BinaryTreeAdder implements IVisitor<Integer> {
             if (t.right != null) result += t.right.accept(this);
             return result;
         }
+    }
 }
 
 @SuppressWarnings("PublicField")
@@ -60,6 +44,7 @@ class BinaryTree<E extends Comparable<E>> implements IVisitable<E> {
     public BinaryTree<E> left, right;
     public E data;
 
+    @SafeVarargs
     public BinaryTree(final E... vals) {
         this(Arrays.asList(vals));
     }
@@ -88,19 +73,3 @@ class BinaryTree<E extends Comparable<E>> implements IVisitable<E> {
         return visitor.visit(this);
     }
 }
-```
-
-## Notes
-
--   Visitor encourages lightweight (possibly field-only) classes with
-    functionality stored separately i.e. it decouples behaviour from state
--   good for:
-    -   AST
-    -   file system nodes
-    -   recursive data structures
--   can apply an operation over a composite
--   more powerful than command
-    -   it can carry out the right operation depending on the type of objects
-    -   e.g. printing a file would be different to printing a directory --
-        unlike command, visitor could make that distinction and choose the
-        right method

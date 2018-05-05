@@ -9,6 +9,9 @@
 -   Simon
     -   wait for Simon's reply for until 2 weeks have passed
 -   Find a group for next year's project
+    - Get Imaan and Nic to sign the form ASAP
+-   Read
+    - <file:/~/Documents/PDF/Software Engineering/Code Complete.pdf>
 
 ## Revision
 
