@@ -192,6 +192,8 @@ Tuple
 
 :   -   instance (i.e. occurrence) of an [entity](#relation)
     -   corresponds to a row in SQL [databases](#database).
+    -   **NOTE**: in SQL rows are ordered sequences of values, in maths tuples
+        aren't ordered.
 
     For example:
 

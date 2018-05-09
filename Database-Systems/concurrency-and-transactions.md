@@ -1,5 +1,7 @@
 # Concurrency And Transactions
 
+See <https://www.wikiwand.com/en/Concurrency_control>.
+
 A DBMS provides:
 
 -   [transaction](#transaction) support
@@ -32,14 +34,12 @@ A [transaction](#transaction) has one of the two outcomes:
 
 ACID properties are encored by different components of the DBMS.
 
-  -------------------------------------------------------------------------------------
   Property      Responsibility
   ------------- -----------------------------------------------------------------------
   atomicity     Recovery Mechanisms
   consistency   DBMS and the transaction implemented to enforce integrity constraints
   isolation     concurrency control mechanisms
   durability    recovery mechanisms
-  -------------------------------------------------------------------------------------
 
 ## Issues with Concurrent Transactions
 

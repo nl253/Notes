@@ -1,5 +1,18 @@
 # Data Modelling
 
+As of 2012 seven main databases dominate the commercial marketplace:
+
+-   DB2
+-   Informix
+-   MySQL
+-   Oracle
+-   Postgres
+-   SQL Server
+-   Sybase
+
+Other RDBMS systems tend either to be legacy databases or used within academia
+such as universities or further education colleges.
+
 Part of the process of database development. It takes place after initial
 problem analysis has been conducted. We need to know:
 
@@ -12,6 +25,7 @@ problem analysis has been conducted. We need to know:
 **Data Modelling** is a process of mapping the "real-world" facts into a
 generalised conceptual data model.
 
+
 **Phases of Database Design**:
 
   Conceptual                 Logical                     Physical
@@ -22,7 +36,12 @@ generalised conceptual data model.
 
 ## Conceptual Data Modelling
 
--   first step in data modelling
+Conceptual data model describes the semantics of an organization without
+reference to technology.
+
+-   first step in data modelling, typically this is a first-cut model, with
+    insufficient detail to build an actual database, describes the structure of
+    the whole database for a group of users
 -   high level description of data and their relationships
 -   independent of DBMS types and all physical considerations (a conceptual
     data model could be done for: a relational database, object-oriented
@@ -31,6 +50,18 @@ generalised conceptual data model.
     -   which data objects are relevant
     -   how are they related to each other
     -   constraints that must be satisfied
+-   uses non-technical names, so that executives and managers at all levels can
+    understand the data basis of Architectural Description
+-   May not be normalized
+-   it describes the things of significance to an organization
+    -   entity classes, about which it is inclined to collect information
+    -   characteristics of (attributes) entities
+    -   associations between pairs of those entities of significance
+        (relationships)
+-   it may exist on various levels of abstraction
+-   the model does allow for what is called inheritance in object oriented
+    terms (not the case in logical model for relational databases)
+    -   super-type/sub-type relationships may be exclusive or not
 
 ### ER Modelling
 
@@ -82,24 +113,60 @@ Types of abstractions:
 
 ## Logical Database Design
 
+Logical data models should be based on the structures identified in a preceding
+conceptual data model, since this describes the semantics of the information
+context, which the logical model should also reflect.
+
 -   Process of refining an mapping the conceptual data model to a logical data
     model.
 -   Local database design should produce a description of database which takes
     into account the type of DBMS.
 -   Independent of a *particular* type of DBMS (e.g. PostgreSQL or MySQL) and
     other physical considerations.
+-   Is normalized to fourth normal form (4NF)
+-   Uses business names for entities & attributes
+-   Includes entities (tables), attributes (columns/fields) and relationships (keys)
 
 ## Physical Database Design
 
--   Description of the database implementation in terms of **storage
-    structures** and **access methods**.
--   More low-level, concerned with implementation details such as:
+The physical design of a database involves deep use of particular database
+management technology. For example, a table/column design could be implemented
+on a collection of computers, located in different parts of the world. That is
+the domain of the physical model.
+
+-   typically derives from a logical data model
+-   description of the database implementation in terms of **storage
+    structures** and **access methods**
+-   more low-level, concerned with implementation details such as:
     -   indexes
     -   security measures
     -   base relations
     -   integrity constraints
     -   file organisations
--   Specific to a DBMS
+-   specific to a DBMS
+-   includes:
+    -   tables
+    -   columns
+    -   keys
+    -   data types
+    -   validation rules
+    -   database triggers
+    -   stored procedures
+    -   domains
+    -   access constraints
+-   uses more defined and less generic specific names for tables and columns, such as abbreviated column names, limited by DBMS and any company defined standards
+-   includes:
+    -   primary keys
+    -   indices (for fast data access)
+-   may be de-normalized to meet performance requirements based on the nature of the database
+
+For example: SQL Server runs only on Microsoft Windows operating-systems, while
+Oracle and MySQL can run on Solaris, Linux and other UNIX-based
+operating-systems as well as on Windows.
+
+This means that the disk requirements, security requirements and many other
+aspects of a physical data model will be influenced by the RDBMS that a
+database administrator (or an organization) chooses to use.
 
 ## Entity Relationships
 
@@ -217,6 +284,52 @@ must be updated.
 
 ## Normalisation
 
+<!--TODO finish off normalisation-->
+Normalization is a systematic way of ensuring that a database structure is
+suitable for general-purpose querying and free of certain undesirable
+characteristics:
+
+-   insertion anomaly
+-   update anomaly
+-   deletion anomaly
+
+that could lead to loss of data integrity.
+
+Normalization, restructures a relational database in accordance with a series
+of so-called 'normal forms' in order to reduce data redundancy and improve data
+integrity.
+
+A standard piece of database design guidance is that the designer should create
+a fully normalized design.
+
+### First Normal Form (1NF)
+
+A relation is in 1NF if:
+
+Values in table row need are atomic i.e. they need to be primitive data types.
+
+In other words, the domain of each attribute (column) contains atomic values
+and the value of each attribute contains only 1 value from that set.
+
+### Second Normal Form (2NF)
+
+A relation is in 2NF if it is in 1NF and:
+
+all non-prime attributes depend (see [functional
+dependencies](#functional-dependency)) on the whole of all candidate keys.
+
+A functional dependency on part of any candidate key is a violation of 2NF.
+
+### Third Normal Form (3NF)
+
+A relation is in 3NF if it is in 2NF and:
+
+all attributes are determined only by the candidate keys of that relation and
+not by any non-prime attributes.
+
+**NOTE** tables can be normalised beyond 3NF but most 3NF tables are free of
+update, deletion and insertion anomalies so it might not be necessary.
+
 ### Functional Dependencies
 
 In a relation (i.e. a table), some attributes may be logically dependent on
@@ -241,9 +354,15 @@ left-hand side of the arrow.
 
 #### 1NF
 
+TODO 1NF
+
 #### 2NF
 
+TODO 2NF
+
 #### 3NF
+
+TODO 3NF
 
 ## Glossary
 
@@ -297,3 +416,13 @@ Relationship
     There may be more than one association between entities.
 
     E.g.: `Person -- owns > -- Car` and `Person -- drives > -- Car`
+
+Non-Prime Attribute
+:   an attribute that is not a part of any candidate key of the relation.
+
+Prime Attribute
+:   a key or parts of a key
+
+Physical schema
+:   how data is to be represented and stored (files, indices, et al.) in
+    secondary storage using a particular DBMS

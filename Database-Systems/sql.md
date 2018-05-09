@@ -1,5 +1,9 @@
 # SQL
 
+Most relational databases use the SQL data definition and query language; these
+systems implement what can be regarded as an engineering approximation to the
+relational model.
+
 ## Creating Tables
 
 ``` {.sql}
@@ -54,16 +58,16 @@ Apply a function to all rows in a table.
 
 **All these functions**:
 
-- Take a column as argument
-    - `COUNT` may also take a row
-- Ignore `NULL` values
-- Return a single value
+-   Take a column as argument
+    -   `COUNT` may also take a row
+-   Ignore `NULL` values
+-   Return a single value
 
 **The result may contain only**:
 
-- the grouping attributes
-- constants
-- and aggregate function results
+-   the grouping attributes
+-   constants
+-   and aggregate function results
 
 ``` {.sql}
 SELECT <attr1> [<attr2>, ...]
@@ -111,13 +115,53 @@ SET <attr1> = <val1> [, <attr2> = <val2>, ...]
   OR         TRUE if any of the conditions separated by OR is TRUE
   SOME       TRUE if any of the sub-query values meet the condition
   =          Equal to
-  >          Greater than
-  <          Less than
-  >=         Greater than or equal to
-  <=         Less than or equal to
-  <>         Not equal to
+  \>         Greater than
+  \<         Less than
+  \>=        Greater than or equal to
+  \<=        Less than or equal to
+  \<\>       Not equal to
   \+         Add
   \-         Subtract
   \*         Multiply
   /          Divide
-  %          Modulo
+  \%         Modulo
+
+## User Defined Functions (UDF)
+
+<!--TODO User Defined Functions (UDF) -->
+
+``` {.sql}
+CREATE FUNCTION active_subscribers() RETURNS BIGINT AS
+$$
+    -- variable for the following BEGIN ... END block
+    DECLARE subscribers INTEGER;
+
+    BEGIN
+
+        -- SELECT must always be used with INTO
+        SELECT COUNT(user_id) INTO subscribers FROM users WHERE subscribed;
+
+        -- function result
+        RETURN subscribers;
+
+        -- return NULL if table "users" does not exist
+
+        EXCEPTION
+
+            WHEN undefined_table THEN RETURN NULL;
+
+    END;
+
+$$
+LANGUAGE plpgsql;
+
+
+```
+
+## Window Clauses
+
+<!--TODO Window Clauses-->
+
+<!--
+vim:foldmarker=```\ ,```:foldmethod=marker:
+-->
