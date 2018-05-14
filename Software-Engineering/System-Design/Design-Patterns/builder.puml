@@ -1,0 +1,30 @@
+@startuml
+
+class ComplexObject {
+  - field1
+  - field2
+  - field3
+  - field4
+  - field5
+  - field6
+  - field7
+  - field8
+  - field9
+}
+
+class Builder {
+  + setField1(): Builder
+  + setField2(): Builder
+  + setField3(): Builder
+  + setField4(): Builder
+  + setField5(): Builder
+  + setField6(): Builder
+  + setField7(): Builder
+  + setField8(): Builder
+  + setField9(): Builder
+  + build: ComplexObject
+}
+
+Builder .> ComplexObject: << create >>
+
+@enduml

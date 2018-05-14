@@ -71,16 +71,18 @@
 
 ## System Characteristics
 
--   Availability
--   Maintainability
-    -   use find-grain, replaceable components
+-   Security
+    -   use a layered architecture with critical assets in the inner layers
 -   Performance
     -   locate critical operations and minimise communications
     -   use large rather than fine-grained components
+-   Availability
 -   Safety
     -   locate safety-critical features in a small number of subsystems
--   Security
-    -   use a layered architecture with critical assets in the inner layers
+-   Maintainability
+    -   use find-grain, replaceable components
+
+Forms acronym: `SPASM`.
 
 ## Architectural Views
 

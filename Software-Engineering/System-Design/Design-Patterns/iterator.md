@@ -1,11 +1,13 @@
 # Iterator
 
-You want to be able to sequentially access elements of a collection without
+![UML class diagram](./iterator.png)
+
+You want to be able to **sequentially** access elements of a collection without
 exposing it's underlying implementation.
 
 **For example**:
 
-  - you implemented a hash-set, a list and an array-list
+  - you implemented e.g. a hash-set, a list and an array-list
   - you want to retrieve elements from them in the same way without having to
     worry about what goes on under the hood.
 
@@ -24,19 +26,19 @@ interface Traversable<E> {
     Iterator<E> getIterator();
 }
 
-class ListIterator<E> implements Traversable<E> {
+class ListIterator<E> implements Iterator<E> {
 
     // implementations of next(), first(),  last(), isDone() ...  
 
 }
 
-class HashSetIterator<E> implements Traversable<E> {
+class HashSetIterator<E> implements Iterator<E> {
 
     // implementations of next(), first(),  last(), isDone() ...  
 
 }
 
-class ArrayListIterator<E> implements Traversable<E> {
+class ArrayListIterator<E> implements Iterator<E> {
 
     // implementations of next(), first(),  last(), isDone() ...  
 

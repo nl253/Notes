@@ -1,0 +1,27 @@
+@startuml
+
+interface CreatesProduct {
+    + Product makeProduct()
+}
+
+abstract class Product {
+    ...
+}
+
+class OldProduct extends Product {
+    ...
+}
+
+class FancyProduct extends Product {
+    ...
+}
+
+class NewFactory implements CreatesProduct {
+    + Product makeProduct()
+}
+
+class OldFactory implements CreatesProduct {
+    + Product makeProduct()
+}
+
+@enduml

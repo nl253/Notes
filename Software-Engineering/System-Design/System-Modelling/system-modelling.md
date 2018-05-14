@@ -145,7 +145,33 @@ E.g.: more functionality in the system means more work for software developers.
 
 ## UML
 
-### Class Diagrams
+-   UML specification defines two major kinds of UML diagram: structure
+    diagrams and behavior diagrams.
+-   A UML diagram is a partial graphical representation (**view**) of a model
+    of a system under design, implementation, or already in existence.
+-   UML diagram contains graphical elements (symbols)
+    -   UML nodes connected with edges (also known as paths or flows)
+    -   that represent elements in the UML model of the designed system.
+    -   The UML model of the system might also contain other documentation such
+        as use cases written as templated texts.
+
+### Structure diagrams
+
+Structure diagrams show static structure of the system and its parts on
+different abstraction and implementation levels and how those parts are related
+to each other. The elements in a structure diagram represent the meaningful
+concepts of a system, and may include abstract, real world and implementation
+concepts.
+
+Structure diagrams are not utilizing time related concepts, do not show the
+details of dynamic behavior. However, they may show relationships to the
+behaviors of the classifiers exhibited in the structure diagrams.
+
+#### Class Diagrams
+
+Shows structure of the designed system, subsystem or component as related
+classes and interfaces, with their features, constraints and relationships -
+associations, generalizations, dependencies, etc.
 
 - describe types of objects in the system and the **static relationships** that
   exist between them
@@ -154,7 +180,7 @@ E.g.: more functionality in the system means more work for software developers.
 - show the **constraints** that apply to the way objects are connected
 - properties correspond to fields in a class
 
-#### Attributes
+##### Attributes
 
 Formula:
 
@@ -162,7 +188,7 @@ Formula:
 
 E.g.: `title: String [1] = "Untitled" {readonly}`
 
-#### Associations
+##### Associations
 
 - Alternative way to denote a property.
 - The same information (e.g.: field `title` in a `Book` class) can be shown as
@@ -179,26 +205,7 @@ E.g.: `title: String [1] = "Untitled" {readonly}`
     - both of them can send messages to each other
     - if the association is unidirectional then only the source sends messages
 
-#### Mulitplicities
-
-E.g.:
-
-- `[1]` -- this is implicit
-- `[10]` -- exactly 10
-- `[*]` -- any number
-- `[1..10]` -- ranges are OK
-
-Multiplicities can be specified in fields and at both end of associations.
-
-#### Visibility
-
-- public denoted by `+`
-- private denoted by `-`
-- protected denoted by `#`
-
-Visibility can be specified in fields and at both end of associations.
-
-#### Role Names vs Association Names
+###### Role Names vs Association Names
 
 It's OK to label role names on both ends of the association arrow.
 
@@ -209,42 +216,37 @@ The other way of doing it is labelling associations: the label can apply to the
 arrow itself and would be written in the middle. E.g.: "managed by" (just like
 in relational databases in ER diagrams)
 
-#### Instantiation
+###### Aggregation and Composition
 
-We can make instances of classes using the notation:
-`[instance name] : <class name ie type>`.
+- models "part of whole" relationships e.g.: `Club` has `Facility`
+- aggregation can be seen as an instance of association
+    - composition can be seen as a special case of aggregation
+        - there is no major difference between association and aggregation
+        - composition is the same with the difference that it  "consists of",
+        target cannot exists without the source
+        - "owned by value"
+        - in composition when the container is destroyed so is the value inside of it
+        - in aggregation when the container is destroyed the value persists
 
-#### Operations
+###### Dependencies
 
-- Services that can be requested from an **object** (instance of a class).
-- Correspond to methods.
-- Have signatures which describes the parameters and possible return values.
-- Syntax: `[visibility] ([param: Type, ...]) : [return type] [{property, ...}]`.
-- E.g.: `setName(name: String): void`.
-- In UML show only the most important operations that define how the class
-  interact.
-- Avoid things such as getters and setters and helper methods.
-
-#### Advanced Features of Class Diagrams
-
-##### Stereotypes
-
-- allow to extend UML (extra classification to model items)
-- e.g.: `<< interface >>`, `<< persistent >>`, `<< table >>`, `<< enumeration >>`
-  on a class, `<< use >>` on a dependency
-- part of **profiles**
-- help to tailor the diagram to fit a particular domain
-
-##### Dependencies
-
-- a dependency exists between the source and target when a change in definition
-  of source affect the target
-- dependency is between classes, not objects of those classes
-- built-in dependencies:
-    - `<< call >>` -- source calls operations on the target
-    - `<< create >>` -- source creates an instance of target
-    - `<< instantiate >>` -- source is an instance of target
-    - `<< use >>` -- source requires target for implementation
+-   a weaker form of bond that indicates that one class depends on another
+    because it uses it at some point in time
+    -   a dependency exists between the source and target when a change in
+        definition of source affect the target
+    -   one class depends on another if:
+        -   the independent class (target) is a parameter variable of the
+            dependent class (source)
+        -   the independent class is local variable of a method of the
+            dependent class
+-   dependency is between classes, not objects of those classes
+    -   different from an association, where an attribute of the dependent
+        class is an instance of the independent class
+-   built-in dependencies:
+    -   `<< call >>` -- source calls operations on the target
+    -   `<< create >>` -- source creates an instance of target
+    -   `<< instantiate >>` -- source is an instance of target
+    -   `<< use >>` -- source requires target for implementation
 
 ##### Generalisation
 
@@ -256,25 +258,91 @@ We can make instances of classes using the notation:
 - a subclass may always replace the superclass but not the other way
 - denoted by a hollow arrow pointing to the superclass
 
-##### Aggregation and Composition
+##### Mulitplicities
 
-- models "part of whole" relationships e.g.: `Club` has `Facility`
-- there is no major difference between association and aggregation
-- composition is the same with the difference that it  "consists of",
-  target cannot exists without the source
-- "owned by value"
+E.g.:
 
-##### Interfaces
+- `[1]` -- this is implicit
+- `[10]` -- exactly 10
+- `[*]` -- any number
+- `[1..10]` -- ranges are OK
+
+Multiplicities can be specified in fields and at both end of associations.
+
+##### Visibility
+
+- public denoted by `+`
+- private denoted by `-`
+- protected denoted by `#`
+
+Visibility can be specified in fields and at both end of associations.
+
+###### Instance vs Class Scope
+
+**instance**
+
+- Instance members are scoped to a specific instance.
+- Attribute values may vary between instances
+- Instance scope is assumed by default.
+- Method invocation may affect the instance's state (i.e. change instance's attributes)
+
+**classifier**:
+
+- Represented by underlined names.
+- Correspond to "static" in Java.
+- The scope is the class itself.
+- Attribute values are equal for all instances Method invocation does not affect the instance's state.
+
+##### Instantiation
+
+We can make instances of classes using the notation:
+`[instance name] : <class name ie type>`.
+
+##### Operations
+
+- Services that can be requested from an **object** (instance of a class).
+- Correspond to methods.
+- Have signatures which describes the parameters and possible return values.
+- Syntax: `[visibility] ([param: Type, ...]) : [return type] [{property, ...}]`.
+- E.g.: `setName(name: String): void`.
+- In UML show only the most important operations that define how the class
+  interact.
+- Avoid things such as getters and setters and helper methods.
+
+##### Advanced Features of Class Diagrams
+
+###### Stereotypes
+
+- allow to extend UML (extra classification to model items)
+- e.g.: `<< interface >>`, `<< persistent >>`, `<< table >>`, `<< enumeration >>`
+  on a class, `<< use >>` on a dependency
+- part of **profiles**
+- help to tailor the diagram to fit a particular domain
+
+###### Interfaces
 
 - similar to classes but don't list fields
 - only list operations
 - no state, just behaviour
 
-### Dynamic Diagrams
+### Behaviour Diagrams
 
-Emphasise behaviours, represent the system in action i.e. running.
+Behaviour diagrams show the dynamic behavior of the objects in a system, which
+can be described as a series of changes to the system over time.
+
+#### Use Case Diagrams
+
+Describes a set of actions (**use cases**) that some **system** or systems
+(subject) should or can **perform in collaboration** with one or more
+**external users** of the system (actors) to provide some observable and
+valuable results to the actors or other stakeholders of the system(s).
 
 #### State Diagrams
+
+-   Used for modeling discrete behavior through finite state transitions.
+-   In addition to expressing the behavior of a part of the system, state
+    machines can also be used to express the usage protocol of part of a
+    system.
 
 **Features of state diagrams**:
 
@@ -290,7 +358,15 @@ Emphasise behaviours, represent the system in action i.e. running.
 
 #### Activity Diagrams
 
-Informally activity diagrams are enhanced UML flow charts.
+-   UML behavior diagram
+-   shows flow of control or object flow with emphasis on the sequence and
+    conditions of the flow
+-   The actions coordinated by activity models can be initiated because other
+    actions finish executing, because objects and data become available, or
+    because some events external to the flow occur.
+
+- Shows sequence and conditions for coordinating lower-level behaviors, rather than which classifiers own those behaviors.
+- Informally activity diagrams are enhanced UML flow charts.
 
 **Features of activity diagrams**:
 
@@ -312,6 +388,9 @@ Informally activity diagrams are enhanced UML flow charts.
 -   time signals (e.g. wait x hours)
 
 #### Sequence Diagrams
+
+Most common kind of **interaction diagrams** which focuses on the message
+interchange between lifelines (objects).
 
 **Features of sequence diagrams**:
 
@@ -335,24 +414,16 @@ Informally activity diagrams are enhanced UML flow charts.
 -   deletion of an object
 -   self-deletion
 
-### Static Diagrams
-
-Emphasise structure.
-
-
-
 ## Glossary
 
-System Modelling
-:   approach to software development where a system is represented as a set of
-    models that can be automatically transformed to executable code
-
 Model-driven engineering
-:   aims to  generate a complete or partial system implementation from the
-    system model
+:   An approach to software development where a system is represented as a set of
+    models that can be automatically transformed to executable code. It
+    aims to generate a complete or partial system implementation from the
+    system model.
 
 System Boundaries
 :   define what is outside of the system and what forms part of the system
 
 System Model
-:   abstract view of a system that ignores details
+:   abstract representation of a system that ignores details

@@ -1,0 +1,20 @@
+@startuml
+
+interface Element<E> {
+        + E getVal()
+}
+
+class Primitive<E> {
+        + E getVal()
+}
+
+class Group  {
+        - Collection<Element<E>> elems
+        + E getVal()
+}
+
+Group      o-- Element
+Group     ..up.|> Element
+Primitive ..up.|> Element
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+interface Iterator<E> {
+    next(): E
+    previous(): E
+    first(): E
+    last(): E
+    isDone(): Boolean
+}
+
+interface Traversable<E> {
+    getIterator(): Iterator<E> 
+}
+
+class ListIterator<E> implements Iterator
+class HashSetIterator<E> implements Iterator
+
+class List<E> implements Traversable
+class HashSet<E> implements Traversable
+
+List ...> ListIterator: << create >>
+HashSet ...> HashSetIterator: << create >>
+
+@enduml

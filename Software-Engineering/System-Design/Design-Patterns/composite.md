@@ -1,11 +1,10 @@
 # Composite
 
-![](./composite.png)
+![UML class diagram](./composite.png)
 
--   Compose objects into tree-like structures.
+-   you have a primitive and a composite type and you want to call the same
+    methods on them i.e. treat them in a uniform way
 -   "Directories contain entries, each of which could be a directory."
--   Let A be the parent of B and C where B is a primitive and C stores As.
-
 
 ## When to Use
 

@@ -1,0 +1,36 @@
+@startuml        
+
+interface Inner<E> {
+  + display(): E
+}
+
+class TextField implements Inner
+
+abstract class Wrapper<E> extends Inner {
+  - inner: Inner
+  + display(): E
+  + Wrapper(inner: Inner)
+}
+
+note left of Wrapper 
+  public display() {
+    return self.inner.display();
+  }
+end note
+
+class WideFrame<E> extends Wrapper {
+  + display(): E
+}
+
+note right of WideFrame 
+  public display() {
+    super.display(); // inner acts first
+    makeWide();      // then outer layers
+  }
+end note
+
+class ItalicText<E> extends Wrapper
+
+Wrapper -> Inner
+
+@enduml        

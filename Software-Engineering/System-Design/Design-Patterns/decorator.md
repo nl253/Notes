@@ -1,5 +1,7 @@
 # Decorator
 
+![UML class diagram](./decorator.png)
+
 ## Classification
 
 -   object-oriented
@@ -26,8 +28,7 @@
     -   concrete classes
     -   implement the interface
     -   override the methods
-    -   after executing their extra code delegate to the base decorator class
-        (`super.draw();`)
+    -   delegate to the base decorator class (`super.draw();`) and then execute their own extra code
 
 ## Example
 
@@ -106,3 +107,19 @@ public class DecoratorDemo {
         }
 }
 ```
+
+
+## Notes
+
+-   allows behavior to be added to an individual object, either statically or
+    dynamically, without affecting the behavior of other objects from the same
+    class.
+
+-   The decorator pattern is often useful for adhering to the **Single
+    Responsibility Principle**, as it allows functionality to be divided
+    between classes with unique areas of concern.
+
+-   structurally nearly identical to the chain of responsibility pattern, the
+    difference being that in a chain of responsibility, exactly one of the
+    classes handles the request, while for the decorator, all classes handle
+    the request.

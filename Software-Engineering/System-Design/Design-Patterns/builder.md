@@ -1,5 +1,7 @@
 # Builder
 
+![](./builder.png)
+
 Split the construction of a complex object into multiple function calls.
 At the end run `build()` to create it.
 

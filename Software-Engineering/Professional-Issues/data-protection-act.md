@@ -106,7 +106,7 @@ Pseudonymisation:
         - longitudinal studies
         - case studies (e.g. HM not Henry Molaison)
 
-Access Control: data is only accessible to those who need to know.
+Access Control: data *is* only accessible to those who need to know.
 
 ## Glossary
 

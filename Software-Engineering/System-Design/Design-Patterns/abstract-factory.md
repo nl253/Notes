@@ -26,7 +26,7 @@ in the body of that function.
 *   A `Factory` can choose the appropriate implementation of, say a `UserInterface`
     object, based on the operating system.
 
-*   The user of this ## Api would only need to interact with the `UserInterfaceFactory`
+*   The user of this API would only need to interact with the `UserInterfaceFactory`
     regardless of what operating system they use.
     Ideally, _only_ the `Factory` will make use of the `new` keyword.
 

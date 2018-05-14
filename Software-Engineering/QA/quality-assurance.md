@@ -1,20 +1,24 @@
 # Quality Assurance
 
-QA defines a set of practices that developers should follow to ensure high
-quality of software. It encompasses the whole software development process:
+<!--TODO deriving tests from specification-->
+<!--TODO integration: big-bang vs bottom-up vs top-down vs sandwich-->
+<!--TODO MC/DC-->
+
+Quality Assurance (QA) defines a set of practices that developers should follow
+to ensure high quality of software. It encompasses the whole software
+development process:
 
 -   requirements
 -   design
 -   coding
 -   testing
 -   reviews
+-   integration
 -   release
-
-etc.
 
 The techniques used to ensure QA may vary but most often they include testing.
 
-**Characteristics of SQA**:
+**Characteristics of Software Quality Assurance (SQA)**:
 
 -   reliability
 -   functionality
@@ -25,40 +29,85 @@ The techniques used to ensure QA may vary but most often they include testing.
 
 ## Verification & Validation
 
-The goal of V & V is the establish confidence that the system is fit for
-purpose. The level of confidence required for the release depends on what the
-system is indented to do. If it is about managing people's lives, for instance,
-then it critical that the software is thoroughly tested in advance using all
-possible techniques. This would not be as important when the product is
-supposed to be a prototype.
-
-**Validation** is intended to ensure a product, service, or system results in a
-product, service, or system that meets the operational needs of the user.
-
-**Verification** is intended to check that a product, service, or system meets
-a set of design specifications.
-
-In the development phase, verification procedures involve performing special
-tests to model or simulate a portion, or the entirety, of a product, service or
-system, then performing a review or analysis of the modeling results.
-
-In the post-development phase, verification procedures involve regularly
-repeating tests devised specifically to ensure that the product, service, or
-system continues to meet the initial design requirements, specifications, and
-regulations as time progresses.
-
-It is a process that is used to evaluate whether a product, service, or system
-complies with regulations, specifications, or conditions imposed at the start
-of a development phase. Verification can be in development, scale-up, or
-production.
-
-This is often an internal process.
+The goal of Verification & Validation (V & V) is the establish confidence that
+the system is fit for purpose. The level of confidence required for the release
+depends on what the system is indented to do. If it is about managing people's
+lives, for instance, then it critical that the software is thoroughly tested in
+advance using all possible techniques. This would not be as important when the
+product is supposed to be a prototype.
 
 Apart from testing V & V may include:
 
 -   inspections
 -   code reviews
 -   static code analysis such as cyclomatic complexity or dependency analysis
+
+### Validation
+
+Is intended to ensure a product, service, or system results in a product,
+service, or system that meets the operational needs of the user or client.
+
+This may be done using client acceptance testing.
+
+### Verification
+
+It is a process that is used to evaluate whether a product, service, or system
+complies with regulations, specifications, or conditions imposed at the start
+of a development phase.
+
+In the post-development phase, verification procedures involve regularly
+repeating tests devised specifically to ensure that the product, service, or
+system continues to meet the initial design requirements, specifications, and
+regulations as time progresses.
+
+This is often an internal process.
+
+### Functional vs Non-functional requirements
+
+#### Functional requirements
+
+are about what the system is supposed to do. E.g. the system shall enable
+it's users to access their accounts.
+
+#### Non-functional requirements
+
+are about what the system is supposed to be like.
+
+E.g. the system will be user-friendly.
+
+Describe aspects of the system that do not specifically provide user
+functionality but are required to support delivery of the functions.
+
+-   Their implementation may require additional functional requirements to
+    be made.
+-   Examples include product requirements, such as:
+
+    -   Response Times
+    -   Storage capacity
+    -   Security
+
+Other non-functional constraints that may affect a system might also
+include:
+
+-   External considerations such as legal, ethical or regulatory
+    requirements.
+-   How the users and developers organise/ons work, e.g. in an open plan
+    office (confidentiality), using prescribed development tools,
+    languages, frameworks, etc.
+-   Non-functional requirements often affect the overall system
+    architecture.
+
+### Static vs Dynamic
+
+**Dynamic techniques**
+
+- are V & V methods that require to run the program.
+- Dynamic and static techniques go hand in hand.
+
+**Static techniques**
+
+- V & V methods that don't require to run the program.
+- If it's not necessary you should avoid running the system -- static techniques are *safer*.
 
 ### Testing
 
@@ -68,7 +117,7 @@ the specification).
 
 Testing is a part of the broader V & V process.
 
-**Goals of Testing**
+#### Goals of Testing
 
 1.  Validation Testing
 
@@ -80,7 +129,7 @@ Discover bugs before the software is put to use. Software is exposed to a set
 of test cases (i.e. a [test suite](#test-suite)) which need to reflect the way
 it's supposed to be used.
 
-**Weaknesses of Testing**
+#### Weaknesses of Testing
 
 > Program testing can be used to show the presence of bugs, but never to show
 > their absence! ...
@@ -97,6 +146,34 @@ it's supposed to be used.
     conditions and inputs for even the simplest program we can never test for
     all possible scenario's. At best we can aim for high coverage and for the
     system to behave in accordance with the specification.
+
+#### White vs Black-Box Testing
+
+Tests are categorised as either Black Box or White Box depending on the
+amount of access to the internal workings of what is being tested
+
+**Black box (functional) testing**
+
+No access to the internal structure of the code (nothing is known about how the
+program is written). All you can see is the functionality i.e. the output
+(behaviour).
+
+Black box testing applies at all granularity levels:
+
+-   Unit (from module interface specification)
+-   Integration (from API or subsystem specification)
+-   System (from system requirements specification)
+-   Regression (from system requirements and bug history)
+
+**White box (structural) testing**
+
+Testing with access the internal structure of the code being tested.
+Structural testing is basically concern both the results and also the process.
+
+White box testing applies to relatively small parts of a system:
+
+-   Unit
+-   Integration
 
 #### Inspections
 
@@ -144,21 +221,196 @@ it becomes easier to narrow down the cause of bugs.
 
 Unit testing forms the basis for component testing.
 
-**Weaknesses of Unit Testing**
+###### Unit Testing Frameworks
+
+It's almost always a good idea to use a framework for unit testing (e.g. JUnit)
+
+-   good and informative error messages
+    -   how it failed
+    -   what went wrong
+    -   what was expected
+-   reduce code duplication
+    -   if you aren't using a framework you're writing one yourself
+-   easy to write `setUp` and `tearDown` methods
+-   can group tests using tags (see JUnit5)
+-   manual testing is error prone
+-   generate report
+-   assemble a bunch of test cases into a
+
+###### Weaknesses of Unit Testing
 
 1.  Does not catch issues on the level of integration. It will not tell us how
     components interact when put together in practice.
 2.  Cannot test performance.
 3.  UIs are not testable with unit testing.
 4.  Non-functional requirements are difficult to test.
+5.  Testing a unit in isolation may not be possible.
 
 See [weaknesses of TDD](#weaknesses-of-tdd).
 
+Testing a unit in isolation may not be easy... E.g. a unit may rely on methods
+provided by another unit (dependent-on component -- DOC).
+
+One solution is to replace the DOC with a piece of code that simulates the
+activity of that DOC.
+
+-   It doesn't need to behave exactly as the DOC
+-   Just provides the same API
+
+###### Test Double
+
+-   additional code that "stands in" for the missing code with which the SUT is
+    interacting.
+-   not part of the final code, they are just useful for testing
+-   developing them has a cost, but it is often compensated by the benefits of
+    unit testing
+-   use when:
+    -   untested requirement that cannot be verified
+    -   want to isolate the unit i.e. test it without interaction with other
+        units which might make it unclear what is cause what behaviour
+    -   want to be able to run our tests more quickly and more often
+
+Dummy
+:   an empty object passed in a method call, but never used. Typically just to
+    satisfy a compiler when a method argument is required
+
+Fake
+:   an object with a working implementation, but usually in a simplified form,
+    i.e. not suitable for production.
+
+Spy
+:   a stub that also records information based on how they were called e.g. an
+    in-memory database
+
+Stub
+
+:   -   an object with hard-coded behaviour suitable for a given test. Provides
+        "canned answers", not responding to other calls
+        -   No dynamically chosen random values as tests should be consistent
+        -   It must be very simple, e.g. returning hard-coded values
+    -   A stub replaces a DOC and provides the test a control point for the
+        indirect inputs of the SUT
+    -   It can be used to force the SUT down paths it might not otherwise
+        execute
+    -   In the choice of inputs, you can use partitioning, boundary analysis,
+        etc.
+
+Mock
+:   has a set of expectations about calls that are made. If these expectations
+    are not met, the test is fail.
+
+###### Testing Inputs
+
+**Random (uniform) choice** -- pick inputs randomly in the input domain.
+
+-   Avoid designer bias -- test designer can make the same logical assumptions as
+    the program designer (especially if they are the same person)
+-   But treats all inputs as equally viable ... is this a good assumption ?
+-   The faults in the code are needles in a haystack
+-   To sample the number of needles in a hay we would sample randomly
+-   sampling requires unbiased statistics but it is not our goal!
+-   To find the needles in the hay we need to look systematically (not
+    uniformly, unless there are really many needles)
+-   **Systematic approach** -- try to select inputs that are especially valuable
+-   Functional testing is systematic testing
+
+Some general guidelines:
+
+-   force invalid outputs to be generated generate all possible error messages
+-   force computation results to be too large or too small
+-   sequences
+    -   test sequences of zero length
+    -   test sequences with only a single value
+    -   use sequences of different sizes in different tests
+    -   derive tests that access the first, central, last element
+
+###### Equivalence Partitions Testing
+
+-   It is a software testing technique that systematically divides the input
+    domain of a piece of software into **classes** forming a partition all
+    elements in a class should "fail in the same way"
+-   the aim is to uncover classes of errors and minimise the number of inputs
+    to try (hence tests) **at least two classes -- legal and unexpected inputs**
+
+###### Boundary Analysis
+
+No guarantees, but experience suggests that faults are more likely to be at the
+boundary than at the centre.
+
+Boundary analysis-- refines the input choice made by Equivalence Class
+Partitioning by picking the "boundary" values for each class.
+
+By Boundary Value Analysis, which input values should we consider for integer x
+with domain {0..10} ?
+
+1.  divide the domain in partitions -- \\( x \\lt 0, 0 \\ge x \\le 10, x \\gt 10 \\)
+2.  chose boundary values for each partition: -1, 0, 10, 11
+
+Repeat the exercise with the input x being a string of 3 characters.
+
+###### MC/DC
+
+###### Deriving Unit Tests from Specification
+
+Use case diagrams provide useful information for testing (Jacobson et al. 92):
+
+-   the basic courses (expected flow of events)
+-   the odd courses (alternative flows)
+-   each line-item in the requirements traceable to a use case
+-   each feature in user documentation traceable to a use case
+
+However use cases lack important information for testing:
+
+-   no domain definitions for inputs and output variables (no type information)
+-   no conditions that determine basic or alternative flow
+-   no testable specification of I/O relationships among variables
+-   no dependencies among use cases
+-   no information on the frequency of each use cases
+
+###### Unit Tesing Glossary
+
+Units
+:   are the smallest testable parts of the system. In object oriented
+    programming units can be classes, interfaces or methods in functional
+    programming they can be modules or functions.
+
+Test suite
+:   is a collection of test cases intended to show that some piece of software
+    conforms to the specification by behaving in accordance with the test
+    cases.
+
+Test case
+:   is a specification of a single test which means a description of the
+    procedure, inputs, environment and expected output.
+
+Fixture
+
+:   -   is a fixed state of a set of objects used as a baseline for running
+        tests.
+    -   The purpose of a test fixture is to ensure that there is a well known
+        and fixed environment in which tests are run so that results are
+        repeatable. (a bit like seeding random number generator)
+
 ##### Component Level Testing
+
+- test several interacting objects
+- you access the functionality of these objects through the defined **component interface**
+- testing composite components should therefore focus on showing that the component interface behaves according to its specification
+- you can assume that unit tests on the individual objects within the component have been completed
 
 ##### Integration Level Testing
 
+- putting components together
+- focus on interactions between components
+- checks emergent behaviour
+- lower level than system testing
+
 ##### System Level Testing
+
+- putting it all together
+- higher level than integration
+- checks emergent behaviour
+- focus on interactions between components
 
 #### Test Driven Development
 
@@ -247,64 +499,12 @@ Failures
 Faults
 :   are flaws (defects) in the system such as bugs.
 
-Functional requirements
-:   are about what the system is supposed to do. E.g. the system shall enable
-    it's users to access their accounts.
-
-Non-functional requirements
-
-:   are about what the system is supposed to be like.
-
-    E.g. the system will be user-friendly.
-
-    Describe aspects of the system that do not specifically provide user
-    functionality but are required to support delivery of the functions.
-
-    -   Their implementation may require additional functional requirements to
-        be made.
-    -   Examples include product requirements, such as:
-
-        -   Response Times
-        -   Storage capacity
-        -   Security
-
-    Other non-functional constraints that may affect a system might also
-    include:
-
-    -   External considerations such as legal, ethical or regulatory
-        requirements.
-    -   How the users and developers organise/ons work, e.g. in an open plan
-        office (confidentiality), using prescribed development tools,
-        languages, frameworks, etc.
-    -   Non-functional requirements often affect the overall system
-        architecture.
-
 Mock objects
+
 :   sometimes called stubs act as dummy objects that stand in place of the
     actual units. They often satisfy an interface without doing the work a real
-    unit would require. For example we can have a mock database that instead of
+    unit would require.
+
+    For example we can have a mock database that instead of
     fetching the data from a remote repository simply returns some fake,
     hard-coded data to the client.
-
-Units
-:   are the smallest testable parts of the system. In object oriented
-    programming units can be classes, interfaces or methods in functional
-    programming they can be modules or functions.
-
-Static techniques
-:   are V & V methods that don't require to run the program. If it's not
-:   necessary you should avoid running the system -- static techniques are
-    *safer*.
-
-Dynamic techniques
-:   are V & V methods that require to run the program. Dynamic and static
-    techniques go hand in hand.
-
-Test suite
-:   is a collection of test cases intended to show that some piece of software
-    conforms to the specification by behaving in accordance with the test
-    cases.
-
-Test case
-:   is a specification of a single test which means a description of the
-    procedure, inputs, environment and expected output.

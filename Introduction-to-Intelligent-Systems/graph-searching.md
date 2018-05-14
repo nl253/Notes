@@ -4,7 +4,7 @@
 
 ### Prerequisite Code
 
-``` {.hs}
+``` {.haskell}
 data Node a = Node
   { getNodeVal  :: a
   , getAdjNodes :: [Node a]
@@ -52,11 +52,11 @@ depthFirstLimited (Node rootVal adjNodes) dest depth
 
 **The Algorithm**:
 
-1.  Iterate all paths of length \\(k\\), try to match all paths to destination.
+1.  Iterate all paths of length \(k\), try to match all paths to destination.
     If any paths were generated, return the first match (all will have the same
     distance so the choice can be made arbitrarily).
-2.  Repeat the algorithm with length of \\(k + 1\\). Stop repeating the
-    algorithm when \\(k = depthOfGraph\\) (at this point we know we won't find
+2.  Repeat the algorithm with length of \(k + 1\). Stop repeating the
+    algorithm when \(k = depthOfGraph\) (at this point we know we won't find
     it -- this will work only for finite graphs).
 
 ``` {.haskell}
@@ -70,7 +70,7 @@ iterativeDeepening root dest = iterativeDeepening' root dest 0
       | depthLim <= maxDepth =
         case depthFirstLimited root dest maxDepth of
           res@(Just _) -> res
-          _            -> iterativeDeepening' root dest (depthLim + 1)
+          _ -> iterativeDeepening' root dest (depthLim + 1)
       | otherwise = Nothing
 ```
 
@@ -80,7 +80,12 @@ iterativeDeepening root dest = iterativeDeepening' root dest 0
 
 ### Best-First Search
 
-### A\*
+- extends uninformed (non-heuristic) search
+- in addition
+
+#### A\*
+
+## Puzzle Solving
 
 ## Glossary
 
@@ -100,10 +105,23 @@ Optimal
     algorithm is one that always finds the shortest path.
 
     An example of such an algorithm is iterative deepening which always
-    explores paths of length \\(k\\) before exploring paths of length \\( k + 1
-    \\). This guarantees that whenever we find a path from A to B it is always
+    explores paths of length \(k\) before exploring paths of length \( k + 1
+    \). This guarantees that whenever we find a path from A to B it is always
     the shortest one (because we couldn't find it in the set of paths of length
-    \\(k - 1\\) ).
+    \(k - 1\) ).
 
     An algorithm that does not have this property is said to be
     **sub-optimal**.
+
+Heuristic
+:   
+    The objective of a heuristic is to produce a solution in a reasonable time frame that is good enough for solving the problem at hand. This solution may not be the best of all the solutions to this problem, or it may simply approximate the exact solution. But it is still valuable because finding it does not require a prohibitively long time.
+
+    a heuristic function is said to be **admissible** if it never overestimates the cost of reaching the goal, i.e. the cost it estimates to reach the goal is not higher than the lowest possible cost from the current point in the path.
+
+    may be used in situations where there are no known algorithms
+
+    Examples of admissible heuristics:
+
+    - straight-line distance (using polar radius a for r)
+    - Manhattan block distance

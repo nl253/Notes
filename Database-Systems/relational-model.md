@@ -41,7 +41,7 @@ Codd in 1970 proposed the principles of the relational model.
 
 ## Relation
 
--   a relation between sets A and B leads to a set of [ordered pairs](#tuple)
+-   a relation between sets A and B leads to a set of [tuples](#tuple)
 -   mathematical concept based on set theory and predicate logic
 -   is a logical representation of data
 -   physically representable as a table
@@ -192,8 +192,7 @@ Tuple
 
 :   -   instance (i.e. occurrence) of an [entity](#relation)
     -   corresponds to a row in SQL [databases](#database).
-    -   **NOTE**: in SQL rows are ordered sequences of values, in maths tuples
-        aren't ordered.
+    -   **NOTE**: (in SQL) rows are ordered sequences of values
 
     For example:
 

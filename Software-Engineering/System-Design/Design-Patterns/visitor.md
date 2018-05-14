@@ -29,32 +29,32 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+@FunctionalInterface
 interface IVisitable<E> {
-    E accept(IVisitor<E> visitor);
+    default E accept(IVisitor<E> visitor) {
+        return visitor.visit(this);
+    }
 }
 
 
 @FunctionalInterface
-interface IVisitor<E> {
-    E visit(IVisitable<E> visitable);
+interface IVisitor<E, V extends IVisitable<E>> {
+    E visit(V visitable);
 }
 
 class BinaryTreeAdder implements IVisitor<Integer> {
-
-
     @Override
-        public final Integer visit(final IVisitable<Integer> visitable) {
-            if (visitable == null) return 0;
-            int result = 0;
-            final BinaryTree<Integer> t = (BinaryTree<Integer>) visitable;
-            if (t.data != null) result += t.data;
-            if (t.left != null) result += t.left.accept(this);
-            if (t.right != null) result += t.right.accept(this);
-            return result;
-        }
+    public final Integer visit(final BinaryTree<Integer> visitable) {
+        if (visitable == null) return 0;
+        int result = 0;
+        final BinaryTree<Integer> t = (BinaryTree<Integer>) visitable;
+        if (t.data != null) result += t.data;
+        if (t.left != null) result += t.left.accept(this);
+        if (t.right != null) result += t.right.accept(this);
+        return result;
+    }
 }
 
-@SuppressWarnings("PublicField")
 class BinaryTree<E extends Comparable<E>> implements IVisitable<E> {
 
     public BinaryTree<E> left, right;
@@ -81,11 +81,6 @@ class BinaryTree<E extends Comparable<E>> implements IVisitable<E> {
             if (right == null) right = new BinaryTree<>();
             right.insert(val);
         }
-    }
-
-    @Override
-    public E accept(final IVisitor<E> visitor) {
-        return visitor.visit(this);
     }
 }
 ```

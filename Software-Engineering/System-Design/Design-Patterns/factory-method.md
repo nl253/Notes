@@ -1,5 +1,7 @@
 # Factory Method
 
+![factory method UML](./factory-method.png)
+
 Instead of hard-coding a concrete class implementation, define an interface
 with a single method that instantiates a subclass (e.g. `Product`).
 
@@ -20,36 +22,3 @@ with a single method that instantiates a subclass (e.g. `Product`).
     `Product`)
 2.  Defer the instantiation details (which subclass of e.g. `Product` to use on
     which OS) to interface implementors
-
-## Example
-
-``` {.java}
-interface CreatesProduct {
-    Product makeProduct();
-}
-
-abstract class Product {
-    ...
-}
-
-class OldProduct extends Product {
-    ...
-}
-
-class FancyProduct extends Product {
-    ...
-}
-
-
-class Implementor implements CreatesProduct {
-    Product makeProduct() {
-        return new FancyProduct();
-    }
-}
-
-class Implementor2 implements CreatesProduct {
-    Product makeProduct() {
-        return new OldProduct();
-    }
-}
-```

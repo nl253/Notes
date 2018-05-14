@@ -1,0 +1,21 @@
+@startuml
+
+interface Observer {
+  + triggerAction()
+}
+
+abstract class Observable {
+  - observers: Obeserver [*]
+  + registerObserver(observer: Observer)
+  + notifyObservers()
+}
+
+note bottom of Observable 
+  public notifyObservers() {
+    observers.forEach(Observer::triggerAction);
+  }
+end note
+
+Observable ..> Observer : << call >>
+
+@enduml

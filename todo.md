@@ -4,12 +4,7 @@
 
 -   Amazon
     -   laptop case
--   talk to grandparents
-    -   probably write a letter + thank for the money
--   Simon
-    -   wait for Simon's reply for until 2 weeks have passed
--   Find a group for next year's project
-    - Get Imaan and Nic to sign the form ASAP
+-   Get Imaan and Nic to sign the form ASAP
 -   Read
     - <file:/~/Documents/PDF/Software Engineering/Code Complete.pdf>
 
@@ -82,7 +77,6 @@
 -   run length encoding
 -   complexity hierarchies
 
-
 ### Theory of Computing
 
 #### Automata and Regular Expressions
@@ -151,23 +145,6 @@
     -   ~~unit propagation~~
     -   ~~pure literal elimination~~
     -   ~~splitting~~
-
-### Introduction to Intelligent Systems
-
-
--   neural networks
-    -   perceptron
-    -   backpropagation
--   puzzle solving
--   minimax and alpha-beta pruning
--   program synthesis
--   ~~graph searching algorithms~~
-    -   ~~uniform cost search~~
-    -   ~~heuristic search and A\* algorithm~~
-    -   ~~breadth first search~~
-    -   ~~limited depth first search~~
-    -   ~~depth first search~~
-    -   ~~iterative deepening~~
 
 ### Functional and Concurrent Programming
 
