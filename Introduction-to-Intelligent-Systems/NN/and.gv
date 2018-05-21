@@ -1,0 +1,13 @@
+digraph G {
+        {
+                node [shape="plaintext"]
+                x
+                y
+                output
+        }
+
+        x -> "w1 = 1"
+        y -> "w2 = 1"
+
+        {"w1 = 1", "w2 = 1", "b = -2"} -> sum -> H -> output
+}

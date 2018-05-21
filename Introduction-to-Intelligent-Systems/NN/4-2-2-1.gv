@@ -1,0 +1,28 @@
+digraph G {
+        {
+                node [shape="plaintext"]
+                x
+                y
+                z
+                w
+                output
+        }
+
+        // lights in a row problem
+        // 
+        // w x 
+        // y z
+        // 
+        // it's OK for w and x to be lit 
+        // it's OK for y and z to be lit 
+        // but NOT both
+
+        // we must feed the output of and1 and and2 into xor
+        {w, x} -> and1
+        {y, z} -> and2
+
+        {and1, and2} -> {or, nand} -> and -> output
+
+        // nand
+
+}

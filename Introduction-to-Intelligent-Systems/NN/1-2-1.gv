@@ -1,0 +1,38 @@
+digraph G {
+
+    {
+        node [shape="plaintext"]
+            Input
+            Output
+    }
+
+    Input -> {w1, w2}
+
+    subgraph cluster_0 {
+        w1
+        b1
+        sum1
+        LS1
+    }
+
+    subgraph cluster_1 {
+        w2
+        b2
+        sum2
+        LS2
+    }
+
+    subgraph cluster_2 {
+        w1_
+        w2_
+        b_
+        sum_
+        Id
+    }
+
+    {w2, b2} -> sum2 -> LS2 -> w2_ 
+    {w1, b1} -> sum1 -> LS1 -> w1_ 
+
+    {w1_, w2_, b_} -> sum_ -> Id -> Output
+}
+

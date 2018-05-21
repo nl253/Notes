@@ -1,11 +1,14 @@
-# Data Structures
 
-## Hash Table
+## Algorithms 
+
+## Data Structures
+
+### Hash Table
 
 A hash table is a **lookup table** that uses an array in which the location of
 each item is found by using a [hash function](#hash-functions).
 
-### Hash Functions
+#### Hash Functions
 
 -   Hash function converts data into an integer
 -   a good hash function is quick to calculate and creates an even spread of
@@ -13,9 +16,9 @@ each item is found by using a [hash function](#hash-functions).
 
 For example sha512:
 
-    34ddb532d73c71e147782d5b3c6159fc8524df0727765797149703e0b6068a2517ace9f25d802c1dabca60402c5d0559a64e93491eea2db356fcc04d32ead9f4  data-structures.md
-    da439b3a0b2178463fda1d45b129c7d144b3f57d194cbc4323ddf37c6d647d2cbdc1af28af3244d804a8b228534e0048db71763b0accfaece2ae654fb7159a6f  floyd-warshall.md
-    e0af9ab8b0ba319a1e0a2376d8762d89a2b59918dbda91efdf6b4318e5066ad564975b25af45646a104a4fa38955e1617a9e290016621d072dbde2583aff6903  runtime-complexity-estimation.md
+    34ddb532d73c71e147782d5b3...  data-structures.md
+    da439b3a0b2178463fda1d45b...  floyd-warshall.md
+    e0af9ab8b0ba319a1e0a2376d...  runtime-complexity-estimation.md
 
 ``` {.java}
 public class HTable {
@@ -49,7 +52,7 @@ A complete table would also need methods to:
 
 etc.
 
-### Hash table efficiency
+#### Hash table efficiency
 
 If the table size is the same as, or larger than, the number of entries then
 average lookup takes constant time (ie O(1)).
@@ -59,7 +62,7 @@ Search time is the same however many records are stored.
 Generally, there is a trade-off between table size and speed. Hash tables are
 the usual way to implement a lookup table where speed is very important.
 
-## Binary Search Tree
+### Binary Search Tree
 
 A binary search tree is a linked data structure where each node has links to
 two other other nodes (left and right).
@@ -88,7 +91,7 @@ class Tree {
 };
 ```
 
-### Searching a BST
+#### Searching a BST
 
 ``` {.java}
 // Return the node with the matching key,
@@ -127,13 +130,13 @@ static Tree search(Tree root, int key) {
 We want a method that will work on any tree, including a tree with no nodes.
 This will not work if we use an ordinary non-static method.
 
-... unless we make the Tree class abstract, have an `EmptyTree` class too, and use
-that instead of null.
+... unless we make the Tree class abstract, have an `EmptyTree` class too, and
+use that instead of null.
 
 The recursive search is simpler and safe for well-constructed trees since the
 recursive depth is proportional to depth of the tree.
 
-### Inserting Nodes to BST
+#### Inserting Nodes to BST
 
 ``` {.java}
 // Insert a new node in the tree and return
@@ -153,7 +156,7 @@ public Tree(int key) {
 }
 ```
 
-### Process (eg print) BST
+#### Process (eg print) BST
 
 ``` {.java}
 // print the keys of the tree, one per line,
@@ -167,7 +170,7 @@ public static void print(Tree tree) {
 }
 ```
 
-### BSTs vs Hash Tables
+#### BSTs vs Hash Tables
 
 -   Binary search trees and hash tables provide alternative ways to implement a
     lookup-table abstract data type.
@@ -177,7 +180,7 @@ public static void print(Tree tree) {
     can search for more than just an exact match can create of the top of your
     head if you understand the principles.
 
-### How efficient are binary search trees?
+#### How efficient are binary search trees?
 
 -   The algorithms to search and insert in a tree move one step down the tree
     at each iteration (or each recursive method call).
@@ -187,21 +190,26 @@ public static void print(Tree tree) {
     size) is the number of nodes
 -   A tree in which each left subtree is null will effectively be a linked list
     and its height will be equal to its size
--   A tree of height h can contain up to \\( 1 + 2 + 4 + \\dots... + 2^(h-1) \\)
-    nodes This is a geometric progression and is equal to \\( 2^(h - 1) \\)
 
-## Priority Queues
+**NOTE**:
 
-Many -- algorithms need a data structure to store a collection of values and allow
-fast access to the largest value stored. read largest value remove largest and
-rapidly determine the new largest. add a new value which may or may not be the
-new largest.
+A tree of height \(h\) can contain up to \(1 + 2 + 4 + \dots + 2^{(h - 1)}\) nodes.
+This is a geometric progression and is equal to \( 2^{(h - 1)} \).
+
+### Priority Queues
+
+Many algorithms need a data structure to store a collection of values and
+allow fast access to the largest value stored.
+
+- read largest value
+- remove largest
+- rapidly determine the new largest
+- add a new value which may or may not be the new largest
 
 An example is Dikstra's shortest-path algorithm but there are plenty of others.
-Called a priority queue. Different implementations give different performance
-characteristics.
+Different implementations give different performance characteristics.
 
-### Naive Implementations
+#### Naive Implementations
 
 **Unordered List**
 
@@ -213,10 +221,11 @@ characteristics.
 **Ordered List**
 
 -   Remove -- return end element (constant)
--   Insert -- scan list to find place and move elements to preserve order (linear)
+-   Insert -- scan list to find place and move elements to preserve order
+    (linear)
 -   Construct -- sort (worse than linear)
 
-### Heaps
+#### Heaps
 
 Binary tree such that each parent element is larger than its two children. Thus
 largest element at root. (Max-Heap)

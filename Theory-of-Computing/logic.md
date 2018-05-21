@@ -14,7 +14,7 @@ Validity
 
 :   A formula of a formal language is a valid formula if and only if it is true
     under every possible interpretation of the language. In propositional
-    logic, they are tautologies. (eg \\( T \\vee F \\))
+    logic, they are tautologies. (e.g. \(T \vee F\))
 
 :   A valid logical argument is one in which the conclusion is entailed by the
     premises, because the conclusion is the consequence of the premises.
@@ -23,9 +23,9 @@ Syntactic Consequence
 
 :   there is a derivation in the proof system
 
-Completeness
+<!-- Completeness -->
 
-:
+<!-- : -->
 
 Decidability
 
@@ -35,12 +35,14 @@ Decidability
     -   The halting problem is an example: there is no algorithm that correctly
         determines whether arbitrary programs eventually halt when run.
 
-Cogency :
+<!-- Cogency  -->
+
+<!-- :  -->
 
 Tautology
 
 :   -   a formula or assertion that is true under all interpretations.
-    -   eg for predicate `P(x)` it would be when x is true or false.
+    -   e.g. $(P(x) \iff \bot) \vee (P(x) \iff \top)$
     -   **all tautologies are equivalent**
 
 Contradiction
@@ -62,8 +64,10 @@ Conjunctive Normal Form (CNF)
 :   A formula is in conjunctive normal form (CNF) if it is a conjunction of
     clauses (or a single clause).
 
-    For example, x~1~ is a positive literal, ¬x~2~ is a negative literal, x~1~
-    ∨ ¬x~2~ is a clause, and (x~1~ ∨ ¬x~2~) ∧ (¬x~1~ ∨ x~2~ ∨ x~3~) ∧ ¬x~1~ is
+    For example, $x_{1}$ is a positive literal, $\neg x_{2}$ is a negative literal,
+    $x_{1} \vee \neg x_{2}$ is a clause, and
+    $(x_{1} \vee \neg x_{2}) \wedge (\neg x_{1} \vee x_{2} \vee x_{3}) \wedge \neg x_{1}$ 
+    is
     a formula in conjunctive normal form,
 
     Using the laws of Boolean algebra, every propositional logic formula can be
@@ -73,15 +77,14 @@ Conjunctive Normal Form (CNF)
 Principle of Explosion
 
 :   -   From contradiction, anything follows.
-    -   Formal definition: \\( \\models (P \\rightarrow Q) \\wedge \\neg P \\)
+    -   Formal definition: \(\models (P \rightarrow Q) \wedge \neg P\)
 
 The Boolean satisfiability problem (SAT)
 
 :   A propositional logic formula, also called Boolean expression, is built
-    from variables, operators AND (conjunction, also denoted by \\( \\wedge
-    \\)), OR (disjunction, \\( \\vee \\))), NOT (negation, \\( \\neg \\)), and
+    from variables, operators AND (conjunction, also denoted by \(\wedge\)), OR (disjunction, \(\vee\))), NOT (negation, \(\neg\)), and
     parentheses. A formula is said to be satisfiable if it can be made true by
-    assigning appropriate logical values (i.e. \\( \\top, \\bot \\)) to its
+    assigning appropriate logical values (i.e. \(\top,\ \bot\)) to its
     variables. The Boolean satisfiability problem (SAT) is, given a formula, to
     check whether it is satisfiable
 
@@ -90,9 +93,9 @@ Well-formed formula
 :   finite sequence of symbols from a given alphabet that is part of a formal
     language.
 
-    a "well formed formula" is a formula that adheres to the syntactic rules of
+    A "well formed formula" is a formula that adheres to the syntactic rules of
     some formal language. In propositional logic it would a formula that makes
-    use of the alphabet of propositional logic ie {v, n, \\\<=\>, -\>, ...}
+    use of the alphabet of propositional logic i.e. $\{\vee, \wedge, <=>, \rightarrow, \dots\}$
 
 Syntax
 
@@ -105,7 +108,7 @@ Semantics
 
 Law of Excluded Middle
 
-:   -   Formal definition: \\( \\vDash P \\vee \\neg P \\)
+:   -   Formal definition: \( \vDash P \vee \neg P \)
     -   relevant in 2-valued logic
     -   based on the assumption that something must be either True OR False
     -   in 3 valued logics this does not hold true

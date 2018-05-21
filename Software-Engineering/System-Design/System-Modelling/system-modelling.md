@@ -146,7 +146,7 @@ E.g.: more functionality in the system means more work for software developers.
 ## UML
 
 -   UML specification defines two major kinds of UML diagram: structure
-    diagrams and behavior diagrams.
+    diagrams and behaviour diagrams.
 -   A UML diagram is a partial graphical representation (**view**) of a model
     of a system under design, implementation, or already in existence.
 -   UML diagram contains graphical elements (symbols)
@@ -164,8 +164,8 @@ concepts of a system, and may include abstract, real world and implementation
 concepts.
 
 Structure diagrams are not utilizing time related concepts, do not show the
-details of dynamic behavior. However, they may show relationships to the
-behaviors of the classifiers exhibited in the structure diagrams.
+Details of dynamic behaviour. However, they may show relationships to the
+behaviours of the classifiers exhibited in the structure diagrams.
 
 #### Class Diagrams
 
@@ -327,7 +327,7 @@ We can make instances of classes using the notation:
 
 ### Behaviour Diagrams
 
-Behaviour diagrams show the dynamic behavior of the objects in a system, which
+Behaviour diagrams show the dynamic behaviour of the objects in a system, which
 can be described as a series of changes to the system over time.
 
 #### Use Case Diagrams
@@ -339,8 +339,8 @@ valuable results to the actors or other stakeholders of the system(s).
 
 #### State Diagrams
 
--   Used for modeling discrete behavior through finite state transitions.
--   In addition to expressing the behavior of a part of the system, state
+-   Used for modelling discrete behaviour through finite state transitions.
+-   In addition to expressing the behaviour of a part of the system, state
     machines can also be used to express the usage protocol of part of a
     system.
 
@@ -358,14 +358,14 @@ valuable results to the actors or other stakeholders of the system(s).
 
 #### Activity Diagrams
 
--   UML behavior diagram
+-   UML behaviour diagram
 -   shows flow of control or object flow with emphasis on the sequence and
     conditions of the flow
 -   The actions coordinated by activity models can be initiated because other
     actions finish executing, because objects and data become available, or
     because some events external to the flow occur.
 
-- Shows sequence and conditions for coordinating lower-level behaviors, rather than which classifiers own those behaviors.
+- Shows sequence and conditions for coordinating lower-level behaviours, rather than which classifiers own those behaviours.
 - Informally activity diagrams are enhanced UML flow charts.
 
 **Features of activity diagrams**:
@@ -413,6 +413,19 @@ interchange between lifelines (objects).
 -   asynchronous calls
 -   deletion of an object
 -   self-deletion
+
+##### Async vs Sync Messages
+
+If a caller sends a synchronous message, it must wait until the message is
+done, such as invoking a subroutine.
+
+-   **filled arrowheads show a synchronous message**
+-   **stick arrowheads show an asynchronous message**
+
+##### Normal vs Return Arrow
+
+- Solid arrows denote normal message sending
+- Dotted (actually dashed) arrows denote return of message
 
 ## Glossary
 

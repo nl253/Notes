@@ -1,0 +1,7 @@
+digraph G {
+
+        {x, w} -> and1
+        {y, z} -> and2
+
+        {and1, and2} -> or
+}

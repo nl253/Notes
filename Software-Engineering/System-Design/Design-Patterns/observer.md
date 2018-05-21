@@ -19,7 +19,7 @@ others.
     `Observers`
 2.  the `Subject` may `register()` additional `Observer`s to watch her state
 3.  the `Subject` notifies the `Observer`s whenever changes are made to it
-4.  the `Observer`s may query `Subject`'s status eg `getStatus()`
+4.  the `Observer`s may query `Subject`'s status e.g. `getStatus()`
 
 ## Example
 
