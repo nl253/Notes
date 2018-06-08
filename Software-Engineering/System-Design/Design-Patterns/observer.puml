@@ -16,6 +16,6 @@ note bottom of Observable
   }
 end note
 
-Observable ..> Observer : << call >>
+Observable ..> Observer: << call >>
 
 @enduml

@@ -12,18 +12,18 @@ At the end run `build()` to create it.
 
 ## Problem It Solves
 
-- Some objects require more components to 'build' them.
-- You want to avoid constructors with >10 arguments.
-- You want to delay the creation of an object.
+-   Some objects require more components to 'build' them.
+-   You want to avoid constructors with \>10 arguments.
+-   You want to delay the creation of an object.
 
 ## Example
 
 -   `StringBuilder` -- use `append()` and later run `toString()`
 -   `StreamBuilder`
 
-```java
+``` {.java}
 class HouseBuilder {
-    
+
     /* many fields */
 
     public HouseBuilder setHouseName(int houseName) {

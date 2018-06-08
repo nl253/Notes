@@ -26,7 +26,7 @@ public class Database {
 }
 ```
 
-## Evalutation
+## Evaluation
 
 -   might be convenient in many cases where a global access to some set of
     utility methods is needed

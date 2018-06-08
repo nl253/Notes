@@ -53,7 +53,7 @@ CS focuses more on the fundamentals and theory.
 -   Acceptability
 -   Dependability and Security
 
-**Key Challanges is Software Development**:
+**Key Challenges is Software Development**:
 
 -   maintaining QA standards
 -   delivering on time

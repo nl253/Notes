@@ -7,12 +7,12 @@ class Sender {
 class Receiver
 
 interface Command<E> {
-  + execute: E
+  + execute(): E
 }
 
 class KillConnection implements Command
-class NotifyUser implements Command
-class PrintLogs implements Command
+class NotifyUser     implements Command
+class PrintLogs      implements Command
 class DisplayWebPage implements Command
 
 Sender ..> Receiver

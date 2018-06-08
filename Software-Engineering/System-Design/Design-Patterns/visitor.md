@@ -18,7 +18,7 @@ heterogeneous structure as visitor objects.
 
 ## Implementation
 
-1.  Create an *interace* `IVisitor<E>` that defines the `E visit(IVisitable visitable)` method.
+1.  Create an *interface* `IVisitor<E>` that defines the `E visit(IVisitable visitable)` method.
 2.  Ensure implementors have the `E accept(IVisitor<E> visitor)` method. They are the ones
     calling it by passing a reference to itself into the function.
 

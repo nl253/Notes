@@ -22,7 +22,7 @@ class Builder {
   + setField7(): Builder
   + setField8(): Builder
   + setField9(): Builder
-  + build: ComplexObject
+  + build(): ComplexObject
 }
 
 Builder .> ComplexObject: << create >>

@@ -1,4 +1,4 @@
-@startuml        
+@startuml
 
 interface Inner<E> {
   + display(): E
@@ -12,7 +12,7 @@ abstract class Wrapper<E> extends Inner {
   + Wrapper(inner: Inner)
 }
 
-note left of Wrapper 
+note left of Wrapper                        
   public display() {
     return self.inner.display();
   }
@@ -33,4 +33,4 @@ class ItalicText<E> extends Wrapper
 
 Wrapper -> Inner
 
-@enduml        
+@enduml

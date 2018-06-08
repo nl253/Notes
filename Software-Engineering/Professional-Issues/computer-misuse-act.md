@@ -26,36 +26,43 @@ London is illegal (as is hacking into London from Milan).
 
 ## Unauthorised access to computer material
 
-**Involves**<br/>
+**Involves**
 
 -   causing a computer to perform some function
 -   described by the Act's sponsor as 'simple hacking', using a computer
     without permission
 
-**Penalty**<br/> up to two years in prison or a fine
+**Penalty**
 
-**Example**<br/> could be as little as guessing and using a password
+up to two years in prison or a fine
+
+**Example**
+
+could be as little as guessing and using a password
 
 ## Unauthorised access to computer material with intent to commit or facilitate commission of further offences
 
 This is a more serious offence.
 
-**Penalty**<br/> the penalty is up to five years imprisonment and an
-unlimited fine.
+**Penalty**
 
-**Example**<br/> actions such as attempting to use the contents of an
-email message for blackmail.
+the penalty is up to five years imprisonment and an unlimited fine.
+
+**Example**
+
+actions such as attempting to use the contents of an email message for
+blackmail.
 
 ## Unauthorised modification of computer material
 
-**Involves** <br/>
+**Involves**
 
 -   distributing a computer virus, or malicious deletion of files
 -   From 2006 Police & Justice Act, rephrased as: Unauthorised acts with
     intent to impair operation of computer ... as it was up to then
     unclear whether denial-of-service was CMA.
 
-**Penalty**<br/>
+**Penalty**
 
 -   Raised to 10 years and unlimited fine in 2006.
 -   Making, supplying or obtaining articles for ... (1,3) Computer

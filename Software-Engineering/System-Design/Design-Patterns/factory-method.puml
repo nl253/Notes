@@ -1,27 +1,27 @@
 @startuml
 
 interface CreatesProduct {
-    + Product makeProduct()
+  + Product makeProduct()
 }
 
 abstract class Product {
-    ...
+  ...
 }
 
 class OldProduct extends Product {
-    ...
+  ...
 }
 
 class FancyProduct extends Product {
-    ...
+  ...
 }
 
 class NewFactory implements CreatesProduct {
-    + Product makeProduct()
+  + makeProduct(): Product
 }
 
 class OldFactory implements CreatesProduct {
-    + Product makeProduct()
+  + makeProduct(): Product
 }
 
 @enduml

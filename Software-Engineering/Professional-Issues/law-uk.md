@@ -39,8 +39,8 @@
 
 ## Equalities Act 2010
 
-> "because of a protected characteristic, A treats B less favourably than A
-> treats or would treat others"
+> "because of a protected characteristic, A treats B less favourably
+> than A treats or would treat others"
 
 Replaced various discrimination laws (incl Disability Act 2005).
 
@@ -56,19 +56,25 @@ Replaced various discrimination laws (incl Disability Act 2005).
 -   sexual orientation
 -   discrimination
 
-**Awareness** <br/> With restrictions, e.g. disability: A needs to know;
+**Awareness**
 
-**Indirect** <br/> A puts B at a disadvantage, and not proportionate means.
+With restrictions, e.g. disability: A needs to know;
 
-**Example in CS** <br/>web sites.
+**Indirect**
+
+A puts B at a disadvantage, and not proportionate means.
+
+**Example in CS**
+
+web sites.
 
 ## Computer Misuse Act 1990
 
 See [Computer Misuse Act 1990](./computer-misuse-act.md).
 
-## Data Protetion Act 1999
+## Data Protection Act 1999
 
-See [Data Protetion Act](./data-protection-act.md).
+See [Data Protection Act](./data-protection-act.md).
 
 ## Glossary
 
@@ -85,14 +91,16 @@ Positive perspective
 
 :   -   What the law is
     -   law as a human construct
-    -   the validity of any law is dependant upon the source of the law not its
-        merit
-    -   a bad law added by a legitimate authority remains nevertheless a law
+    -   the validity of any law is dependant upon the source of the law
+        not its merit
+    -   a bad law added by a legitimate authority remains nevertheless a
+        law
 
 Critical perspective
 
 :   -   Why the law is as it is.
-    -   Examines underlying socio- economic, political and technical factors
+    -   Examines underlying socio- economic, political and technical
+        factors
     -   Intended to identify agenda and bias within law.
 
 Barristers
@@ -100,8 +108,9 @@ Barristers
 :   -   argue in court
     -   Specialise in courtroom advocacy and litigation
     -   Primary functions are within the courts
-    -   cannot pick and choose which cases they are assigned to often retained
-        by a solicitor on behalf of a client rather than direct contact
+    -   cannot pick and choose which cases they are assigned to often
+        retained by a solicitor on behalf of a client rather than direct
+        contact
 
 Solicitors
 
@@ -116,8 +125,8 @@ Criminal Law
     -   prosecution by the state (R)
     -   potential for incarceration
     -   high burden of proof
-    -   no act is a crime unless previously established as such by statute or
-        common law secures boundaries of acceptable conduct
+    -   no act is a crime unless previously established as such by
+        statute or common law secures boundaries of acceptable conduct
 
 Judges
 
@@ -132,15 +141,15 @@ Civil Law
     -   places statutory law over case law
     -   secures the rights and duties of individuals
     -   inquisitorial system
-    -   long series of cases connected with consistent reasoning required to
-        change law
+    -   long series of cases connected with consistent reasoning
+        required to change law
 
 Common Law
 
 :   -   A legal precedent made by a judge during the course of a case
     -   fluid and interpretive
-    -   a judge applies knowledge of legal precedent (prior decisions) and
-        common sense to the facts
+    -   a judge applies knowledge of legal precedent (prior decisions)
+        and common sense to the facts
     -   cases are individual (unique)
     -   English law works on a common law system
     -   adversarial system
@@ -148,15 +157,15 @@ Common Law
 
 Copyright
 
-:   -   A document granting exclusive right to publish and sell literary or
-        musical or artistic work.
+:   -   A document granting exclusive right to publish and sell literary
+        or musical or artistic work.
     -   Not about the idea but the expression of it.
 
 Secondary legislation
 
 :   -   Law that is passed outside of an Act of Parliament
-    -   Parliament 'passes on' legislative power to a particular individual or
-        body
+    -   Parliament 'passes on' legislative power to a particular
+        individual or body
     -   Includes
         -   [byelaws](#byelaws)
         -   [rules](#rules)

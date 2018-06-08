@@ -23,13 +23,13 @@
 > -   Design and implementation (defining in detail to structure, organisation
 >     and behaviour of the system and implementing it)
 > -   Validation (checking that the system does what the client expects it to)
-> -   Evolution (changing the prodcut in response to changing customer needs)
+> -   Evolution (changing the product in response to changing customer needs)
 >
 > Forms acronym: `SDVE`.
 
 -  What does "integration" mean?
 
-> Assembling all the comoponents into a working system.
+> Assembling all the components into a working system.
 
 -  Outline the phases of the Waterfall Software Deployment Process Model.
 
@@ -41,7 +41,7 @@
 
 -  Explain the idea behind "Incremental Software Deployment".
 
-> -   Unlike in the Waterfall Software Delopment Process there is no notion of
+> -   Unlike in the Waterfall Software Development Process there is no notion of
 >     clear sequence of actions that software developers should follow.
 > -   Instead, phases such as requirements analysis and definition, design,
 >     implementation, testing and validation are interleaved i.e. they are
@@ -59,13 +59,13 @@
 >   client for validation. As a result we quickly gain feedback and can make
 >   adjustments if necessary.
 > - Customers can get the product quicker since: unlike in the Waterfall Software
->   Delopment Process Model the emphasis on documetnaion is smaller and also
+>   Development Process Model the emphasis on documentation is smaller and also
 >   clients can use the snapshots of the product that software developers
 >   produce
 >
 > **Negatives**: 
 >
-> - The software process is not as vilible -- it's difficitul to measure
+> - The software process is not as visible -- it's difficult to measure
 >   progress
 > - 
 
@@ -130,10 +130,10 @@
 
 > Agile software development focuses on:
 >
-> - ensuring high customer satsifaction 
-> - working clsoely with the "product owner"
+> - ensuring high customer satisfaction 
+> - working closely with the "product owner"
 > - people rather than rigid engineering practices
-> - resonding to change rather than following a plan
+> - responding to change rather than following a plan
 > - delivering the product on time even at the expense of extensive
 >   documentation
 >
@@ -161,11 +161,11 @@
 >
 > - some have argued that it's not suitable for large-scale projects since
 >   Agile software development teams are typically small and self-organising
-> - maitinating of Agile documents such as Product Backlog, Sprint Backlog and
+> - maintaining of Agile documents such as Product Backlog, Sprint Backlog and
 >   Burndown Chart means less time is spent on coding i.e. doing the actual
 >   work
 > - Scrum, for instance, can be argued to require excessive ceremonies on the
->   part of software developers e.g. *daily* standup in which everyone is
+>   part of software developers e.g. *daily* stand-up in which everyone is
 >   likely to say the same thing everyday
 
 -   Compare and contrast Agile and Waterfall software development.
@@ -174,7 +174,7 @@
   -------------------------------- -----------------------------------------------------------
   Responds to change, iterative    Plan-driven, distinct phases to which you don't go back
   Focus on people                  Focus on software engineering practices e.g. documentation 
-  Small self-organising groups     No requiremtns about the size of development groups
+  Small self-organising groups     No requirements about the size of development groups
   Close collaboration with clients No such requirement
 
 -   What is the relationship between Agile software development and Scrum?
@@ -182,7 +182,7 @@
 > Agile is a particular approach to building software. It tells you what the
 > Agile values are but not how to build software or how to enforce those
 > values. Scrum is an implementation of Agile -- it's an Agile software
-> development framework with more detailed descritption of exactly what one
+> development framework with more detailed description of exactly what one
 > should do.
 
 -   Discuss main elements i.e. "ceremonies" of Agile software development.
@@ -201,7 +201,7 @@
 -   Describe what is a "sprint" in the context of Agile software development.
 
 > Sprint in an iteration in Scrum (in Agile software development). Each sprint
-> lasts (usually) 2 -- 4 weeks. It consists of: inital planning, daily
+> lasts (usually) 2 -- 4 weeks. It consists of: intial planning, daily
 > meetings, coding, testing etc.
 
 -   Discuss the main documents maintained in Agile software development.

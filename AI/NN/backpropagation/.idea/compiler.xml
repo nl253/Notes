@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/awesome-java" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/better-java" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/coding-interview-university" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/Design Patterns" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/java8-tutorial" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/Algorithms and Data Structures/interviews" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/Algorithms and Data Structures/java-algorithms-implementation" includeSubdirectories="true" />
+      <directory url="file://$USER_HOME$/Documents/Programming/Java/Algorithms and Data Structures/Tic-Tac-Toe" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <bytecodeTargetLevel target="1.8" />
+  </component>
+  <component name="RmicSettings">
+    <option name="GENERATE_IIOP_STUBS" value="true" />
+  </component>
+</project>

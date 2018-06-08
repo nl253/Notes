@@ -271,7 +271,7 @@ data.stream()
     - parse tree
     - abstract syntax tree (AST)
 
-### Distrubuted Systems
+### Distributed Systems
 
 A distributed system is a model in which system components air located on
 networked computers which communicate by passing messages. Components do that
