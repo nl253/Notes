@@ -1,12 +1,6 @@
-**/.stack-work
-**/.HTML
-**/*.html
-Algorithms-Correctness-and-Efficiency/Haskell
-Functional-and-Concurrent-Programming/Erlang
+# Algorithms-Correctness-and-Efficiency/Haskell
+# Functional-and-Concurrent-Programming/Erlang
 Web-Development/CodeIgniter
-**/*.iml
-.templates
-**/*.pdf
-**/*.pptx
-**/*.beam
-**/tags
+Math/.mypy_cache
+WebDev/Learn
+WebDev/index.html
