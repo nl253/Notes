@@ -1,7 +1,0 @@
-[package]
-name = "Rust"
-version = "0.1.0"
-authors = ["nl253 <nl253@kent.ac.uk>"]
-
-[dependencies]
-rand = "0.5"

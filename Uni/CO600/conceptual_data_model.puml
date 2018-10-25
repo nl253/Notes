@@ -1,0 +1,54 @@
+@startuml
+abstract class User {
+  email
+  password 
+  is_blocked
+}
+
+abstract class Content {
+  is_blocked
+  creator
+}
+
+Lesson --|> Content
+Module --|> Content
+
+Rating --> Student
+Rating --> Content
+
+Student        --|> User
+ContentCreator --|> Student
+Admin          --|> User
+
+class Test {
+  duration_min
+  time_started
+}
+ 
+ClosedQuestion --|> Question
+OpenQuestion   --|> Question
+Question       --> Test : "in a" >
+Test           --> Content : "about" >
+
+Answer --> Student : "gives" < 
+Answer --> Question : "to" >
+
+Invitation --> Content : "to" > 
+Invitation --> Student : "for" < 
+Invitation --> ContentCreator : "sent by" >
+
+class Report {
+  issue
+}
+
+Report --> Content : "for" > 
+Report --> User    : "issued by" >
+
+class Progress {
+  is_completed
+}
+
+Progress --> Student : "of" 
+Progress --> Module  : "in"
+Progress --> Lesson  : "in"
+@enduml
