@@ -141,7 +141,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_17_0.png)
+![png](./linear_algebra_files/linear_algebra_2_17_0.png)
 
 Vectors can also be represented as arrows. Let's create a small
 convenience function to draw nice arrows:
@@ -170,7 +170,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_21_0.png)
+![png](./linear_algebra_files/linear_algebra_2_21_0.png)
 
 ### 3D vectors
 
@@ -194,7 +194,7 @@ subplot3d.set_zlim3d([0, 9])
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_25_0.png)
+![png](./linear_algebra_files/linear_algebra_2_25_0.png)
 
 It is a bit hard to visualize exactly where in space these two points
 are, so let's add vertical lines. We'll create a small convenience
@@ -217,7 +217,7 @@ plot_vectors3d(subplot3d, [a,b], 0, color=("r","b"))
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_27_0.png)
+![png](./linear_algebra_files/linear_algebra_2_27_0.png)
 
 ## Norm
 
@@ -271,7 +271,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_33_0.png)
+![png](./linear_algebra_files/linear_algebra_2_33_0.png)
 
 Looks about right!
 
@@ -315,7 +315,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_38_0.png)
+![png](./linear_algebra_files/linear_algebra_2_38_0.png)
 
 Vector addition is **commutative**, meaning that
 $\textbf{u} + \textbf{v} = \textbf{v} + \textbf{u}$. You can see it on
@@ -358,7 +358,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_41_0.png)
+![png](./linear_algebra_files/linear_algebra_2_41_0.png)
 
 Finally, subtracting a vector is like adding the opposite vector.
 
@@ -410,7 +410,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_46_0.png)
+![png](./linear_algebra_files/linear_algebra_2_46_0.png)
 
 As you might guess, dividing a vector by a scalar is equivalent to
 multiplying by its inverse:
@@ -447,7 +447,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_50_0.png)
+![png](./linear_algebra_files/linear_algebra_2_50_0.png)
 
 ## Dot product
 
@@ -607,7 +607,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_64_0.png)
+![png](./linear_algebra_files/linear_algebra_2_64_0.png)
 
 # Matrices
 
@@ -1362,7 +1362,7 @@ plt.axis([0, 5, 0, 4])
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_168_0.png)
+![png](./linear_algebra_files/linear_algebra_2_168_0.png)
 
 Of course we could also have stored the same 4 vectors as row vectors
 instead of column vectors, resulting in a $4 \times 2$ matrix (the
@@ -1379,7 +1379,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_170_0.png)
+![png](./linear_algebra_files/linear_algebra_2_170_0.png)
 
 Or you can represent it as a polygon: matplotlib's `Polygon` class
 expects an $n \times 2$ NumPy array, not a $2 \times n$ array, so we
@@ -1393,7 +1393,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_172_0.png)
+![png](./linear_algebra_files/linear_algebra_2_172_0.png)
 
 ## Geometric applications of matrix operations
 
@@ -1432,7 +1432,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_175_0.png)
+![png](./linear_algebra_files/linear_algebra_2_175_0.png)
 
 If we add a matrix full of identical vectors, we get a simple geometric
 translation:
@@ -1454,7 +1454,7 @@ plt.grid()
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_177_0.png)
+![png](./linear_algebra_files/linear_algebra_2_177_0.png)
 
 Although matrices can only be added together if they have the same size,
 NumPy allows adding a row vector or a column vector to a matrix: this is
@@ -1514,7 +1514,7 @@ plot_transformation(P, P_rescaled, "$P$", "$0.6 P$", arrows=True)
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_181_0.png)
+![png](./linear_algebra_files/linear_algebra_2_181_0.png)
 
 ### Matrix multiplication -- Projection onto an axis
 
@@ -1560,7 +1560,7 @@ def plot_projection(U, P):
 plot_projection(U, P)
 ```
 
-![png](linear_algebra_files/linear_algebra_2_187_0.png)
+![png](./linear_algebra_files/linear_algebra_2_187_0.png)
 
 We can actually project on any other axis by just replacing $U$ with any
 other unit vector. For example, let's project on the axis that is at a
@@ -1573,7 +1573,7 @@ U_30 = np.array([[np.cos(angle30), np.sin(angle30)]])
 plot_projection(U_30, P)
 ```
 
-![png](linear_algebra_files/linear_algebra_2_189_0.png)
+![png](./linear_algebra_files/linear_algebra_2_189_0.png)
 
 Good! Remember that the dot product of a unit vector and a matrix
 basically performs a projection on an axis and gives us the coordinates
@@ -1621,7 +1621,7 @@ plot_transformation(P, P_rotated, "$P$", "$VP$", [-2, 6, -2, 4], arrows=True)
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_196_0.png)
+![png](./linear_algebra_files/linear_algebra_2_196_0.png)
 
 Matrix $V$ is called a **rotation matrix**.
 
@@ -1674,7 +1674,7 @@ plot_transformation(P, F_shear.dot(P), "$P$", "$F_{shear} P$",
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_199_0.png)
+![png](./linear_algebra_files/linear_algebra_2_199_0.png)
 
 Let's look at how this transformation affects the **unit square**:
 
@@ -1692,7 +1692,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_201_0.png)
+![png](./linear_algebra_files/linear_algebra_2_201_0.png)
 
 Now let's look at a **squeeze mapping**:
 
@@ -1706,7 +1706,7 @@ plot_transformation(P, F_squeeze.dot(P), "$P$", "$F_{squeeze} P$",
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_203_0.png)
+![png](./linear_algebra_files/linear_algebra_2_203_0.png)
 
 The effect on the unit square is:
 
@@ -1722,7 +1722,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_205_0.png)
+![png](./linear_algebra_files/linear_algebra_2_205_0.png)
 
 Let's show a last one: reflection through the horizontal axis:
 
@@ -1736,7 +1736,7 @@ plot_transformation(P, F_reflect.dot(P), "$P$", "$F_{reflect} P$",
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_207_0.png)
+![png](./linear_algebra_files/linear_algebra_2_207_0.png)
 
 ## Matrix inverse
 
@@ -1769,7 +1769,7 @@ plt.plot(P[0], P[1], "b--")
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_209_0.png)
+![png](./linear_algebra_files/linear_algebra_2_209_0.png)
 
 We applied a shear mapping on $P$, just like we did before, but then we
 applied a second transformation to the result, and *lo and behold* this
@@ -1803,7 +1803,7 @@ plt.axis([-0.5, 2.1, -0.5, 1.5])
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_213_0.png)
+![png](./linear_algebra_files/linear_algebra_2_213_0.png)
 
 Looking at this image, it is impossible to tell whether this is the
 projection of a cube or the projection of a narrow rectangular object.
@@ -1822,7 +1822,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_215_0.png)
+![png](./linear_algebra_files/linear_algebra_2_215_0.png)
 
 This transformation matrix performs a projection onto the horizontal
 axis. Our polygon gets entirely flattened out so some information is
@@ -1860,7 +1860,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_219_0.png)
+![png](./linear_algebra_files/linear_algebra_2_219_0.png)
 
 But this time, due to floating point rounding errors, NumPy manages to
 calculate an inverse (notice how large the elements are, though):
@@ -1925,7 +1925,7 @@ plot_transformation(P, F_involution.dot(P), "$P$", "$F_{involution} \cdot P$",
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_227_0.png)
+![png](./linear_algebra_files/linear_algebra_2_227_0.png)
 
 Finally, a square matrix $H$ whose inverse is its own transpose is an
 **orthogonal matrix**:
@@ -2049,7 +2049,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_241_0.png)
+![png](./linear_algebra_files/linear_algebra_2_241_0.png)
 
 We rescaled the polygon by a factor of 1/2 on both vertical and
 horizontal axes so the surface area of the resulting polygon is
@@ -2192,7 +2192,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_264_0.png)
+![png](./linear_algebra_files/linear_algebra_2_264_0.png)
 
 Now let's rescale along the vertical and horizontal axes using $\Sigma$:
 
@@ -2207,7 +2207,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_266_0.png)
+![png](./linear_algebra_files/linear_algebra_2_266_0.png)
 
 Finally, we apply the second rotation $U$:
 
@@ -2222,7 +2222,7 @@ plot_transformation(
 plt.show()
 ```
 
-![png](linear_algebra_files/linear_algebra_2_268_0.png)
+![png](./linear_algebra_files/linear_algebra_2_268_0.png)
 
 And we can see that the result is indeed a shear mapping of the original
 unit square.
